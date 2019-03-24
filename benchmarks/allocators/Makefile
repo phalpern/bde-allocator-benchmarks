@@ -9,16 +9,16 @@
 # They may be overridden on the command line, e.g. for gcc 5.1 on 4 cores:
 # $ make CXX=g++ CC=gcc BDEWAF=$HOME/bde-tools/bin/waf STDLIB= PARALLEL=-j4
 
-CXX = clang++-3.6
-CC = clang-3.6
-AR = llvm-ar-3.6
-RANLIB = llvm-ranlib-3.6
+CXX = clang++
+CC = clang
+AR = /usr/local/opt/llvm/bin/llvm-ar
+RANLIB = /usr/local/opt/llvm/bin/llvm-ranlib
 BDEWAF = waf
 
 OPTIM = -O3 -DBSLS_ASSERT_LEVEL_NONE
 LTO =
-DEBUG = 
-PARALLEL = 
+DEBUG =
+PARALLEL =
 GROWTH_SIZE = 20  # use 16 or less for testing
 
 BSLSRC = ../..
@@ -44,15 +44,20 @@ INCLUDES = \
 
 DEFS = -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -DBSLS_IDENT_OFF
 WAFCONFIGARGS = \
-    --abi-bits=64 --cpp11 --build-type release \
-    --assert-level=none $(PARALLEL) 
+    --abi-bits=64 --cpp-std=11 --build-type release \
+    $(PARALLEL)
 
 LIBS = \
-   -Wl,-Bstatic \
    -L$(BDLLIB) -lbdl -L$(BSLLIB) -lbsl \
-   -Wl,-Bdynamic \
    $(STDLIBABI) \
    -lpthread
+
+# LIBS = \
+#    -Wl,-Bstatic \
+#    -L$(BDLLIB) -lbdl -L$(BSLLIB) -lbsl \
+#    -Wl,-Bdynamic \
+#    $(STDLIBABI) \
+#    -lpthread
 
 CFLAGS_BDE = $(DEBUG) $(OPTIM) $(LTO) $(DEFS) $(CFLAGS) -std=c99
 CXXFLAGS_BDE = $(DEBUG) $(OPTIM) $(LTO) $(DEFS) $(STDLIB)
@@ -63,7 +68,7 @@ all: run
 
 BINARIES = growth growth-DS159long shgrowth \
            locality-AS1 locality-AS7 locality-AS9 locality-AS13 \
-           zation tention
+           zation tention copymove
 
 build: $(BINARIES)
 
@@ -120,8 +125,14 @@ zation: zation.cc
 tention: tention.cc
 	$(CXX) -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
 
+# Copy vs move for AP0 and ACCU talk
+copymove-CP: copymove.cc allocont.h
+	$(CXX) -DUSE_COPY -DSTDALLOC -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
+copymove-MV: copymove.cc allocont.h
+	$(CXX) -DUSE_MOVE -DCTMULTI -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
+
 run: run-locality run-zation run-tention run-growth \
-     run-shuffle run-schedule-AS1 run-schedule-AS7
+     run-shuffle run-schedule-AS1 run-schedule-AS7 run-copymove
 
 run-growth: growth
 	@echo With GROWTH_SIZE 20 this may take a full day to complete:
@@ -140,7 +151,7 @@ run-growth-DS159long: growth-DS159long
            echo ./growth-DS159long $$SIZE $$i - ; \
            mkdir -p results-DS159long; \
            (cd results-DS159long; ../growth-DS159long $$SIZE $$i - | tee "growth-$$SIZE-$$i") ; \
-        done && \ 
+        done && \
 	(cd results-DS159long; cat growth-$$SIZE-* >growth-result ) && \
 	(cd results-DS159long; ./reduce-growth-results; rm T*; )
 
@@ -166,6 +177,15 @@ run-locality: locality-AS1 locality-AS7 locality-AS9 locality-AS13
 	./test-locality ./locality-AS13 2>&1; \
 	) | tee >results/locality-result
 	(cd results; ./reduce-locality-results)
+
+run-copymove: copymove-CP copymove-MV
+	@( \
+	echo "********** using COPY (default std::allocator):"; \
+	./test-copymove ./copymove-CP 2>&1; \
+	echo "********** using MOVE (default std::allocator):"; \
+	./test-copymove ./copymove-MV 2>&1; \
+	) | tee >results/copymove-result
+	(cd results; ./reduce-copymove-results)
 
 run-shuffle: locality-AS1
 	( \
