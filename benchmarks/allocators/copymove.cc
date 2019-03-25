@@ -28,15 +28,14 @@
 #include <list>
 #include <vector>
 
-#if defined(STDALLOC)
+#if defined(USE_COPY)
     template <typename T>
         using List =  std::list<T>;
-#elif defined(CTMULTI)
+#elif defined(USE_MOVE)
     template <typename T>
         using List =  multipool::list<T>;
-#elif defined(RTMULTI) || defined(RTMULTIMONO)
-    template <typename T>
-        using List =  poly::list<T>;
+#else
+#  error "Eiether USE_COPY or USE_MOVE must be defined"
 #endif
 
 
@@ -44,13 +43,8 @@ class Subsystem {
     // This class simulates a subsystem that might do various work using a
     // node-based container.
 
-#if defined(CTMULTI)
+#if defined(USE_MOVE)
     BloombergLP::bdlma::Multipool d_allocator;
-#elif defined(RTMULTI)
-    BloombergLP::bdlma::MultipoolAllocator d_allocator;
-#elif defined(RTMULTIMONO)
-    BloombergLP::bdlma::BufferedSequentialAllocator d_backing;
-    BloombergLP::bdlma::MultipoolAllocator d_allocator;
 #endif
     List<int> d_data;
 
@@ -59,15 +53,8 @@ class Subsystem {
   public:
     Subsystem(int initialLength)
         // Create a subsystem having the specified 'initialLength'.
-#if defined CTMULTI
+#if defined(USE_MOVE)
     : d_allocator()
-    , d_data(&d_allocator)
-#elif defined(RTMULTI)
-    : d_allocator()
-    , d_data(&d_allocator)
-#elif defined(RTMULTIMONO)
-    : d_backing(new char[initialLength * 16], initialLength * 16)
-    , d_allocator(&d_backing)
     , d_data(&d_allocator)
 #endif
     {
@@ -170,18 +157,19 @@ void churn(std::vector<Subsystem *> *system, int churnCount)
 
 int main(int argc, const char *argv[])
 {
-    int numSubsystems = argc > 1 ? atoi(argv[1]) : 4;
-    int initialLength = argc > 2 ? atoi(argv[2]) : 20;
-    // int accessCount   = argc > 3 ? atoi(argv[3]) : 18;  // Version 3:
-    unsigned accessCount   = argc > 3 ? atoi(argv[3]) : 18;
-    int churnCount    = argc > 4 ? atoi(argv[4]) : 10;
-    int iterations    = argc > 5 ? atoi(argv[5]) : 3;
+    int numSubsystems    = argc > 1 ? atoi(argv[1]) : 4;
+    int initialLength    = argc > 2 ? atoi(argv[2]) : 20;
+    unsigned elemSize    = argc > 3 ? atoi(argv[3]) : 3;
+    unsigned accessCount = argc > 4 ? atoi(argv[4]) : 18;
+    int churnCount       = argc > 5 ? atoi(argv[5]) : 10;
+    int iterations       = argc > 6 ? atoi(argv[6]) : 3;
 
 
 #ifdef VERBOSE
     std::cout << std::endl
               << "numSubsystems = " << numSubsystems << std::endl
               << "initialLength = " << initialLength << std::endl
+	      << "elementSize   = " << elemSize << std::endl
 	      << "accessCount   = " << accessCount << std::endl
               << "churnCount    = " << churnCount << std::endl
               << "iterations    = " << iterations << std::endl;
@@ -189,13 +177,11 @@ int main(int argc, const char *argv[])
     std::cout << std::endl
               << "nS = " << numSubsystems << '\t'
               << "iL = " << initialLength << '\t'
+              << "eS = " << elemSize << '\t'
 	      << "aC = " << accessCount << '\t'
               << "cC = " << churnCount << '\t'
               << "it = " << iterations << std::endl;
 #endif
-
-// ----------------------------------------------------------------------------
-// Version 2:
 
     if (numSubsystems < 0) {
 
@@ -209,6 +195,7 @@ int main(int argc, const char *argv[])
 
         std::cout << "nS = " << numSubsystems << '\t'
                   << "iL = " << initialLength << '\t'
+                  << "eS = " << elemSize << '\t'
 	          << "aC = " << accessCount << '\t'
                   << "cC = " << churnCount << '\t'
                   << "it = " << iterations << std::endl;

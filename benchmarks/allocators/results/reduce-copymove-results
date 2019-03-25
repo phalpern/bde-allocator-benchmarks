@@ -1,43 +1,49 @@
 #!/bin/bash
 
-fgrep -v '*' copymove-result | grep . | (
-  for cp in CP MV; do
-    for arg1 in 04 17; do
-      for arg2 in 1 2; do
-        for arg3 in 1 2; do
-          for arg4 in 0 1; do
-            read time progname args
-            read internals1
-            read internals2
-            read internals3
-            read timename time
-            read time2
-            read time3
-            # echo $time
-            time=${time#0m}
-            time=${time%s}
-            echo $arg1$arg2$arg3$arg4$cp $args $time
-          done
-        done
-      done
+# Convert time in XmY.YYYs format to seconds.
+# Examples: "1m12.051s" is converted to "72.051"
+function minsecToSec
+{
+    min=${1%m*}
+    sec=${1#*m}
+    sec=${sec%s}
+    echo $(echo "60*$min+$sec" | bc)
+}
+
+# Filter stdin to include only the executed command (starting with '+') and
+# the wall-clock time to execute (starting with "real")
+egrep -e '^(\+|real\t)' copymove-result | (
+    # Read two lines: "+ program arg..." and "real 0m4.05s"
+    while read plus progname args && read timetype time; do
+        key=${progname#*-}  # Suffix on program name. Should be "MV" or "CP".
+        time=$(minsecToSec $time) # Convert time to pure seconds
+        echo "$args,$key,$time"
     done
-  done
 ) | sort -n | (
-  echo -n "Benchmark Arguments"
-  echo -n ", use copies"
-  echo    ", use moves"
-  reftime=1.0
-  while read key arg1 arg2 arg3 arg4 arg5 time; do
-    case "$key" in
-      (*CP) reftime=$time
-            echo -n "$arg1 $arg2 $arg3 $arg4 $arg5, ${time}s"
-            ;;
-      (*)   reltime=`echo "scale=1; 100*$time/$reftime" | bc`
-            printf ", %ss (%.0f%%)" "$time" "$reltime"
-            ;;
-    esac
-    case "$key" in
-      (*MV) echo ;;
-    esac
-  done
+    # Print field headings
+    echo -n "Benchmark Arguments"
+    echo -n ", use copies"
+    echo    ", use moves"
+    refargs=""
+    # Read args, key, and time (comma-separated as set by IFS).
+    # Expect alternating CP and MV lines and compute the relative times
+    while IFS=, read args key time; do
+        case "$key" in
+            (CP) if [ ! -z "$refargs" ]; then
+                     # Got two CP lines in a row.  Missing MV time and reltime
+                     printf "%s, %ss, ?s (?%%)\n" "$refargs" $reftime
+                 fi
+                 reftime=$time
+                 refargs="$args"
+                 ;;
+            (MV) if [ "$refargs" != "$args" ]; then
+                     # Mismatch beween MV line and pior CP line
+                     printf "%s, ?s, %ss (?%%)\n" "$args" $time
+                 fi
+                 reltime=`echo "scale=1; 100*$time/$reftime" | bc`
+                 printf "%s, %ss, %ss (%.0f%%)\n" "$args" $reftime $time "$reltime"
+                 refargs=""
+                 ;;
+        esac
+    done
 ) > copymove.csv

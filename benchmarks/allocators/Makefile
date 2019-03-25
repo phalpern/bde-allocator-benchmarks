@@ -184,7 +184,7 @@ run-copymove: copymove-CP copymove-MV
 	./test-copymove ./copymove-CP 2>&1; \
 	echo "********** using MOVE (default std::allocator):"; \
 	./test-copymove ./copymove-MV 2>&1; \
-	) | tee >results/copymove-result
+	) >results/copymove-result
 	(cd results; ./reduce-copymove-results)
 
 run-shuffle: locality-AS1
