@@ -1,102 +1,74 @@
-// t3.cpp
+// copymove.cc
 
-// This is a sketch of a system that should exhibit fragmentation over time.
-
-// ----------------------------------------------------------------------------
-// Version 2 has been modified so that if the first argument is negative,
-// it and the second arguments are interpreted as (non-negative) powers of
-// two where the first argument is determines the overall physical size of the
-// problem, and the second determines the size of each subsystem.  The number
-// of subsystems is determined as the ratio of physical size to subsystem size.
-// The third and fifth parameters are assumed to be integral factors of the
-// number of subsystems and physical size, respectively.
-// ----------------------------------------------------------------------------
-// ----------------------------------------------------------------------------
-// Version 3 has been modified so that if the third argument is unsigned.
-// ----------------------------------------------------------------------------
-
-#define ARENA
+// Compare shuffling data with copy vs. move assignment
 
 //#define VERBOSE
 
-#include "allocont.h"
-#include <bdlma_multipoolallocator.h>
-
 #include <iostream>
 #include <cstdlib>
+#include <bsls_assert.h>
 
-#include <list>
-#include <vector>
+#include "allocont.h"
 
-#if defined(USE_COPY)
-    template <typename T>
-        using List =  std::list<T>;
-#elif defined(USE_MOVE)
-    template <typename T>
-        using List =  multipool::list<T>;
-#else
-#  error "Eiether USE_COPY or USE_MOVE must be defined"
-#endif
-
+using Element = monotonic::vector<char>;
 
 class Subsystem {
-    // This class simulates a subsystem that might do various work using a
-    // node-based container.
+    // This class simulates a subsystem that might do various work on elements
+    // that have different move vs. copy profiles
 
-#if defined(USE_MOVE)
-    BloombergLP::bdlma::Multipool d_allocator;
-#endif
-    List<int> d_data;
+    monotonic::vector<Element> d_data;
+    unsigned                   d_nextIdx;  // Next element to move from
 
     friend std::ostream& operator<<(std::ostream&, const Subsystem&);
 
   public:
-    Subsystem(int initialLength)
-        // Create a subsystem having the specified 'initialLength'.
-#if defined(USE_MOVE)
-    : d_allocator()
-    , d_data(&d_allocator)
-#endif
+    using allocator_type = monotonic::allocator<Element>;
+
+    Subsystem(const allocator_type& alloc)
+        // Create a subsystem using the specified 'alloc' allocator.
+        : d_data(alloc), d_nextIdx(0) {
+    }
+
+    void initialize(int subsystemSize, unsigned elemSize)
+        // Initialize this subsystem to 'subsystemSize' elements of 'elemSize'
+        // length.
     {
-	for (int i = 0; i < initialLength; ++i) {
-	    d_data.push_back(i);
+        d_data.reserve(subsystemSize);
+	for (unsigned i = 0; i < subsystemSize; ++i) {
+            char c = 'A' + i & 31;
+	    d_data.emplace_back(elemSize, c);
+            d_data.back()[elemSize - 1] = '\0';
         }
     }
 
-    //void access(int accessCount)  Version 3:
+    Element& nextElement() {
+        if (d_nextIdx >= d_data.size()) {
+            d_nextIdx = 0;
+        }
+        return d_data[d_nextIdx++];
+    }
+
     void access(unsigned accessCount)
         // Ping the system, simulating read/write accesses proportional to the
         // specified 'accessCount'.
     {
-	List<int>::iterator it = d_data.begin();
-
 	if (d_data.empty()) {
 	    return;  // nothing to access
 	}
 
-	//for (int i = 0; i < accessCount; ++i) {  Version 3:
+	auto it = d_data.begin();
 	for (unsigned i = 0; i < accessCount; ++i) {
-            if (it == d_data.end()) {
+            (*it)[0] |= 5;
+            if (++it == d_data.end()) {
 	        it = d_data.begin();
 	    }
-	    ++*it;
-	    ++it;
 	}
     }
 
-    void push(int value)
-	// Add the specified 'value' to this subsystem.
-    {
-	d_data.push_back(value);
-    }
+    Element      & operator[](unsigned i)       { return d_data[i]; }
+    Element const& operator[](unsigned i) const { return d_data[i]; }
 
-    void pop()
-	// Remove the next value to this subsystem.
-    {
-	d_data.pop_front();
-    }
-
-    int length() const
+    int size() const
     {
 	return d_data.size();
     }
@@ -112,43 +84,92 @@ std::ostream& operator<<(std::ostream& stream, const Subsystem& object)
     // 'stream' in a single-line, human readable format.
 {
     stream << '{';
-    for (List<int>::const_iterator it  = object.d_data.begin();
-                                        it != object.d_data.end();
-				      ++it) {
-        stream << ' ' << *it;
+    for (const Element& e : object.d_data) {
+        stream << ' ' << e.data();
     }
 
     return stream << " }";
 }
 
-void print(const char *label, const std::vector<Subsystem *>& array)
+void print(const char *label, const monotonic::vector<Subsystem>& array)
 {
     std::cout << std::endl << label << ':' << std::endl;
 
     for (std::size_t i = 0; i < array.size(); ++i) {
-	std::cout << *array[i] << std::endl;
+	std::cout << array[i] << std::endl;
     }
 }
 
-void churn(std::vector<Subsystem *> *system, int churnCount)
+void churn(monotonic::vector<Subsystem> *system, int churnCount)
 {
-    for (int c = 0; c < churnCount; ++c) {
-        size_t k;
-        do {
-	    k = rand() % system->size();
+if (churnCount < 0) {
+    // Shuffle each element of each subsystem with the corresponding element
+    // of all of the other subsystems using a Fisher-Yates suffle.
+    BSLS_ASSERT(system.size() <= 31);
+
+    const unsigned sS = (*system)[0].size(); // Subsystem size
+
+    Element temp(system->get_allocator());
+    Element *hole = &temp;
+
+    for (int c = 0; c < -churnCount; ++c) {
+    for (unsigned e = 0; e < sS; ++e) {
+        for (unsigned i = system->size()-1; i > 0; --i) {
+            size_t k = rand() % (i + 1);
+            Element &toElem   = (*system)[i][e];
+            Element &fromElem = (*system)[k][e];
+#if defined(USE_COPY)
+            // Swap using copy
+            *hole = toElem;
+            toElem = fromElem;
+#elif defined(USE_MOVE)
+            // std::cout << "Swapping [" << i << ',' << e << "] with ["
+            //           << k << ',' << e << "]\n";
+            // Swap using move
+            *hole = std::move(toElem);
+            toElem = std::move(fromElem);
+#else
+#  error "Either USE_COPY or USE_MOVE must be defined"
+#endif
+            hole = &fromElem;
         }
-        while ((*system)[k]->isEmpty());
-
-        // std::cout << "pop k = " << k << std::endl;
-
-        (*system)[k]->pop();
-
-        k = c % system->size();
-
-        // std::cout << "push k = " << k << std::endl;
-
-        (*system)[k]->push(-9);
+#if defined(USE_COPY)
+        *hole = temp;
+#elif defined(USE_MOVE)
+        *hole = std::move(temp);
+#endif
     }
+    }
+} else {
+    Element tempElem(system->get_allocator());
+    Element *toElem = &tempElem;
+
+    // Rotate values through 'churnCount' elements.
+    for (int c = 0; c < churnCount; ++c) {
+
+        size_t k = rand() % system->size();
+
+        // std::cout << "from k = " << k << std::endl;
+
+        Element &fromElem = (*system)[k].nextElement();
+
+#if defined(USE_COPY)
+        *toElem = fromElem;               // Copy
+#elif defined(USE_MOVE)
+        *toElem = std::move(fromElem);    // Move
+#else
+#  error "Either USE_COPY or USE_MOVE must be defined"
+#endif
+        toElem = &fromElem;
+    }
+
+    // Finish rotation
+#if defined(USE_COPY)
+    *toElem = tempElem;               // Copy
+#elif defined(USE_MOVE)
+    *toElem = std::move(tempElem);    // Move
+#endif
+}
 
 #ifdef VERBOSE
     print("configuration after churn", *system);
@@ -157,49 +178,58 @@ void churn(std::vector<Subsystem *> *system, int churnCount)
 
 int main(int argc, const char *argv[])
 {
-    int numSubsystems    = argc > 1 ? atoi(argv[1]) : 4;
-    int initialLength    = argc > 2 ? atoi(argv[2]) : 20;
-    unsigned elemSize    = argc > 3 ? atoi(argv[3]) : 3;
-    unsigned accessCount = argc > 4 ? atoi(argv[4]) : 18;
-    int churnCount       = argc > 5 ? atoi(argv[5]) : 10;
-    int iterations       = argc > 6 ? atoi(argv[6]) : 3;
-
+    int a = 1;
+    int numSubsystems    = argc > a ? atoi(argv[a++]) : 4;
+    int subsystemSize    = argc > a ? atoi(argv[a++]) : 20;
+    unsigned elemSize    = argc > a ? atoi(argv[a++]) : 3;
+    unsigned accessCount = argc > a ? atoi(argv[a++]) : 18;
+    int iterations       = argc > a ? atoi(argv[a++]) : 3;
+    int churnCount       = argc > a ? atoi(argv[a++]) : 5;
 
 #ifdef VERBOSE
     std::cout << std::endl
               << "numSubsystems = " << numSubsystems << std::endl
-              << "initialLength = " << initialLength << std::endl
+              << "subsystemSize = " << subsystemSize << std::endl
 	      << "elementSize   = " << elemSize << std::endl
 	      << "accessCount   = " << accessCount << std::endl
-              << "churnCount    = " << churnCount << std::endl
-              << "iterations    = " << iterations << std::endl;
+              << "iterations    = " << iterations << std::endl
+              << "churnCount    = " << churnCount << std::endl;
 #else
     std::cout << std::endl
               << "nS = " << numSubsystems << '\t'
-              << "iL = " << initialLength << '\t'
+              << "sS = " << subsystemSize << '\t'
               << "eS = " << elemSize << '\t'
 	      << "aC = " << accessCount << '\t'
-              << "cC = " << churnCount << '\t'
-              << "it = " << iterations << std::endl;
+              << "it = " << iterations << '\t'
+              << "cC = " << churnCount << std::endl;
 #endif
 
     if (numSubsystems < 0) {
-
-        numSubsystems = 1 << (-numSubsystems - initialLength);
-
-        initialLength = 1 << initialLength;
-
-        accessCount *= initialLength;
-
-        churnCount *= numSubsystems * initialLength;
-
-        std::cout << "nS = " << numSubsystems << '\t'
-                  << "iL = " << initialLength << '\t'
-                  << "eS = " << elemSize << '\t'
-	          << "aC = " << accessCount << '\t'
-                  << "cC = " << churnCount << '\t'
-                  << "it = " << iterations << std::endl;
+        numSubsystems = -numSubsystems - subsystemSize - elemSize;
+        if (numSubsystems < 0) {
+            std::cerr <<
+                "Error: System size must be >= subsystemSize + elemSize\n";
+            return -1;
+        }
     }
+
+    numSubsystems = 1 << numSubsystems;
+
+    subsystemSize = 1 << subsystemSize;
+
+    elemSize = 1 << elemSize;
+
+    accessCount *= subsystemSize;
+
+    if (churnCount > 0)
+        churnCount *= numSubsystems * subsystemSize;
+
+    std::cout << "nS = " << numSubsystems << '\t'
+              << "sS = " << subsystemSize << '\t'
+              << "eS = " << elemSize << '\t'
+              << "aC = " << accessCount << '\t'
+              << "it = " << iterations << '\t'
+              << "cC = " << churnCount << std::endl;
 
 // ----------------------------------------------------------------------------
 
@@ -210,29 +240,29 @@ int main(int argc, const char *argv[])
               << std::endl;
 #endif
 
-    std::vector<Subsystem *> array;
-    array.reserve(numSubsystems);
+    char buffer[1024];
+    BloombergLP::bdlma::BufferedSequentialPool pool(buffer, sizeof(buffer));
+    monotonic::allocator<Subsystem> alloc(&pool);
+    monotonic::vector<Subsystem> system(numSubsystems, alloc);
 
 #ifdef VERBOSE
     std::cout << std::endl
-              << "Populate each subsystem to have 'initialLength' = "
-              << initialLength
+              << "Populate each subsystem to have 'subsystemSize' = "
+              << subsystemSize
               << std::endl;
 #endif
 
     for (int i = 0; i < numSubsystems; ++i) {
-	array.push_back(new Subsystem(initialLength));
+	system[i].initialize(subsystemSize, elemSize);
     }
 
 #ifdef VERBOSE
-    print("Initial Configuration", array);
+    print("Initial Configuration", system);
 #endif
 
-
-    if (churnCount >= 0) {
-        churn(&array, churnCount);
-    }
-
+//    if (churnCount >= 0) {
+        churn(&system, churnCount);
+//    }
 
     for (int n = 0; n < iterations; ++n) {
 
@@ -242,39 +272,15 @@ int main(int argc, const char *argv[])
 
         for (int s = 0; s < numSubsystems; ++s) {
 
-	    array[s]->access(accessCount);
+	    system[s].access(accessCount);
 
         }
 
 #ifdef VERBOSE
-	print("configuration after access", array);
+	print("configuration after access", system);
 #endif
 
     }
-
-    if (churnCount < 0) {
-        churn(&array, -churnCount);
-    }
-
-
-    int minLen = 0;
-    int maxLen = 0;
-
-    for (int i = 0; i < numSubsystems; ++i) {
-        int len = array[i]->length();
-        if (0 == i) {
-            minLen = maxLen = len;
-        } else if (len > maxLen) {
-            maxLen = len;
-        } else if (len < minLen) {
-            minLen = len;
-        }
-    }
-
-    std::cout << std::endl
-              <<   "minLen = " << minLen
-              << ", maxLen = " << maxLen
-              << ", diff = " << maxLen - minLen << std::endl;
 }
 
 // ----------------------------------------------------------------------------

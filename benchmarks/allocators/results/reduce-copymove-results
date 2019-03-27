@@ -19,7 +19,7 @@ egrep -e '^(\+|real\t)' copymove-result | (
         time=$(minsecToSec $time) # Convert time to pure seconds
         echo "$args,$key,$time"
     done
-) | sort -n | (
+) | sort -V | (
     # Print field headings
     echo -n "Benchmark Arguments"
     echo -n ", use copies"

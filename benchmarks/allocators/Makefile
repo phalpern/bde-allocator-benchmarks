@@ -16,6 +16,7 @@ RANLIB = /usr/local/opt/llvm/bin/llvm-ranlib
 BDEWAF = waf
 
 OPTIM = -O3 -DBSLS_ASSERT_LEVEL_NONE
+# OPTIM = -g -DBSLS_ASSERT_LEVEL_NONE
 LTO =
 DEBUG =
 PARALLEL =
@@ -68,7 +69,7 @@ all: run
 
 BINARIES = growth growth-DS159long shgrowth \
            locality-AS1 locality-AS7 locality-AS9 locality-AS13 \
-           zation tention copymove
+           zation tention copymove-CP copymove-MV
 
 build: $(BINARIES)
 
@@ -179,7 +180,7 @@ run-locality: locality-AS1 locality-AS7 locality-AS9 locality-AS13
 	(cd results; ./reduce-locality-results)
 
 run-copymove: copymove-CP copymove-MV
-	@( \
+	( \
 	echo "********** using COPY (default std::allocator):"; \
 	./test-copymove ./copymove-CP 2>&1; \
 	echo "********** using MOVE (default std::allocator):"; \

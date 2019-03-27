@@ -1,23 +1,62 @@
 #!/bin/bash
 
-set -x  # Echo each command before executing it
+# Command to run ($1) must accept the following args:
+#  First arg: Number Subsystems - 2^n (Total system size in 2^n bytes if < 0)
+#  Second arg: Subsystem size in 2^n elements
+#  Third arg:  Element size in 2^n bytes [3]
+#  Fourth arg: Access Count for each subsystem [18]
+#  Fifth arg:  Iterations [3]
+#  Sixth arg:  churnCount [5]
 
-time $1 -17 4 4 256 5 1
-time $1 -17 4 4 256 5 0
-time $1 -17 4 4 256 -5 1
-time $1 -17 4 4 256 -5 0
+########################################################################
+# Unless otherwise specified, all parameters are expressed as exponents of 2.
+# Example, a size paramter with value 4 yields 16 items.
+########################################################################
 
-time $1 -17 4 4 1 5 1
-time $1 -17 4 4 1 5 0
-time $1 -17 4 4 1 -5 1
-time $1 -17 4 4 1 -5 0
+# Primitive parameters
+#  nS  Number of subsystems
+#  sS  Subsystem size, in elements
+#  sSb Subsystem size, in bytes
+#  eS  Element size, in bytes
+#  aC  Access count - accesses per element per iteration
+#  it  Iterations - Number of complete iterations over all subsystems
+#  cC  Churn count (shuffle factor - not an exponent)
 
-time $1 -17 17 3 256 5 1
-time $1 -17 17 3 256 5 0
-time $1 -17 17 3 256 -5 1
-time $1 -17 17 3 256 -5 0
+# Compound "depth" parameters
+#  S   System size, in bytes (nS * sS * eS)
+#  W   Work per element (aC * it)
 
-time $1 -17 17 3 1 5 256
-time $1 -17 17 3 1 5 0
-time $1 -17 17 3 1 -5 256
-time $1 -17 17 3 1 -5 0
+# We will do depth-ordered enumeration on S.
+
+# For now, we will hold W and Cc constant
+W=6
+cC=5
+
+for S in {22..26}; do
+    echo "***** System Size $S *****" >&2
+    for (( nS=0; nS<=S; ++nS)); do
+        if (( nS > 31 )); then # Max # of subsystems is 31
+            break;
+        elif (( S - nS > 31 )); then
+            ((nS = S - 31)) # Min # of subsystems so that no subsystem > 31
+        fi
+        let "sSb = S - nS"  # Subtracting exponents = dividing real values
+        echo "sSb = $sSb" >&2
+        for (( eS=0; eS<=sSb; eS++ )); do
+            if (( eS > 10 )); then # Max out at 1024-byte elements
+                break
+            fi
+            let "sS = sSb - eS"
+            echo "eS = $eS, sS = $sS" >&2
+            # Don't bother with aC of 0, since we know that accessing each
+            # element only once does not yield interesting results.
+            for (( aC=1; aC<=W; ++aC )); do
+                if (( aC > 8 )); then  # Max out at 256 accesses
+                    break;
+                fi
+                let "it = W - aC"
+                (set -x; time $1 -$S $sS $eS $((2**aC)) $((2**it)) $cC)
+            done
+        done
+    done
+done
