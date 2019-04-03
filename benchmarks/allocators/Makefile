@@ -128,9 +128,9 @@ tention: tention.cc
 
 # Copy vs move for AP0 and ACCU talk
 copymove-CP: copymove.cc allocont.h
-	$(CXX) -DUSE_COPY -DSTDALLOC -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
+	$(CXX) -DUSE_COPY -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
 copymove-MV: copymove.cc allocont.h
-	$(CXX) -DUSE_MOVE -DCTMULTI -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
+	$(CXX) -DUSE_MOVE -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
 
 run: run-locality run-zation run-tention run-growth \
      run-shuffle run-schedule-AS1 run-schedule-AS7 run-copymove
@@ -180,12 +180,7 @@ run-locality: locality-AS1 locality-AS7 locality-AS9 locality-AS13
 	(cd results; ./reduce-locality-results)
 
 run-copymove: copymove-CP copymove-MV
-	( \
-	echo "********** using COPY (default std::allocator):"; \
-	./test-copymove ./copymove-CP 2>&1; \
-	echo "********** using MOVE (default std::allocator):"; \
-	./test-copymove ./copymove-MV 2>&1; \
-	) >results/copymove-result
+	./test-copymove ./copymove-CP ./copymove-MV >results/copymove-result 2>&1
 	(cd results; ./reduce-copymove-results)
 
 run-shuffle: locality-AS1

@@ -1,12 +1,20 @@
 #!/bin/bash
 
-# Command to run ($1) must accept the following args:
+# Tests to run ($@) must accept the following args:
 #  First arg: Number Subsystems - 2^n (Total system size in 2^n bytes if < 0)
 #  Second arg: Subsystem size in 2^n elements
 #  Third arg:  Element size in 2^n bytes [3]
 #  Fourth arg: Access Count for each subsystem [18]
 #  Fifth arg:  Iterations [3]
 #  Sixth arg:  churnCount [1]
+
+tests="$*"
+
+function runtests {
+    for test in $tests; do
+        (set -x; time $test "$@") || exit 1
+    done
+}
 
 ########################################################################
 # Unless otherwise specified, all parameters are expressed as exponents of 2.
@@ -26,6 +34,7 @@
 #  S   System size, in bytes (nS * sS * eS)
 #  W   Work per element (aC + cC + it)
 
+# #######################################################################
 # # Test cost of access. Find where it saturates for churn = 1.
 # # Hold churnCount at 0 (i.e., 2^0 = 1)
 # # Vary system size, but start big
@@ -38,10 +47,12 @@
 # S=30
 # #for (( S=32; S<=34; ++S )); do
 #     for (( aC=-1; aC<=10; ++aC)); do
-#         (set -x; time $1 -$S $sS $eS $aC 0 0) || exit 1
+#         runtests -$S $sS $eS $aC 0 0
 #     done
 # #done
+# #######################################################################
 
+# #######################################################################
 # # Test cost of churn alone (no access).
 # # Hold churnCount at 2 (i.e., 2^2 == 4)
 # # Hold number of elements at 25 (2^25)
@@ -52,41 +63,61 @@
 # for (( nS=15; nS <= 18; nS+=3 )); do
 #     let "sS = S - nS"
 #     for (( eS=4; eS<=10; eS+=2 )); do
-#         (set -x; time $1 $nS $sS $eS -1 -1 $cC) || exit 1
+#         runtests $nS $sS $eS -1 -1 $cC
 #     done
 # done
+# #######################################################################
 
-# Explore two dimensions: number of accesses and system size
+# #######################################################################
+# # Explore two dimensions: number of accesses and system size
 
-# 1st dimension: number of accesses
-# Hold system size constant at 2^29 bytes
-# Hold subsystem size constant at 2^17 elements
-# Hold element size constant at 2^8
-# Hold iterations constant at 2^0
-# Vary number of accesses from 2^6 to 2^9
-# Start with one run of zero iterations to measure churn overhead
-S=29
-sS=17
-eS=8
-(set -x; time $1 -$S $sS $eS 0 -1 0) || exit 1
-for (( aC=6; aC<=9; ++aC )); do
-    (set -x; time $1 -$S $sS $eS $aC 0 0) || exit 1
-done
+# # 1st dimension: number of accesses
+# # Hold system size constant at 2^29 bytes
+# # Hold subsystem size constant at 2^17 elements
+# # Hold element size constant at 2^8
+# # Hold iterations constant at 2^0
+# # Vary number of accesses from 2^6 to 2^9
+# # Start with one run of zero iterations to measure churn overhead
+# S=29
+# sS=17
+# eS=8
+# runtests -$S $sS $eS 0 -1 0
+# for (( aC=6; aC<=9; ++aC )); do
+#     runtests -$S $sS $eS $aC 0 0
+# done
 
-# 2nd dimension: system size
-# Vary system size constant from 2^28 to 2^34 bytes by factors of 2^2
+# # 2nd dimension: system size
+# # Vary system size constant from 2^28 to 2^34 bytes by factors of 2^2
+# # Hold subsystem size constant at 2^16 elements
+# # Hold element size constant at 2^8
+# # Hold iterations constant at 2^0
+# # Hold number of accesses constant at 2^7
+# sS=16
+# eS=8
+# aC=7
+# for (( S=28; S<=34; S+=2 )); do
+#     runtests -$S $sS $eS $aC 0 0
+# done
+# #######################################################################
+
+#######################################################################
+# Vary size, covering large sizes at modest acceses
+# Vary system size starting at 2^34
 # Hold subsystem size constant at 2^16 elements
 # Hold element size constant at 2^8
 # Hold iterations constant at 2^0
-# Hold number of accesses constant at 2^7
+# Hold number of accesses constant at 2^2
 sS=16
 eS=8
-aC=7
-for (( S=28; S<=34; S+=2 )); do
-    (set -x; time $1 -$S $sS $eS $aC 0 0) || exit 1
+aC=2
+for (( S=34; S<=34; ++S )); do
+    runtests -$S $sS $eS -1 -1 0
+    runtests -$S $sS $eS $aC 0 0
 done
+#######################################################################
 
 
+# #######################################################################
 # # For now, we will hold W and it constant; slider for aC and cC
 # W=7
 # it=1
@@ -115,8 +146,9 @@ done
 #                     break;
 #                 fi
 #                 let "cC = W - aC - it"
-#                 (set -x; time $1 -$S $sS $eS $aC $it $cC) || exit 1
+#                 runtests -$S $sS $eS $aC $it $cC
 #             done
 #         done
 #     done
 # done
+# #######################################################################
