@@ -6,7 +6,7 @@
 #  Third arg:  Element size in 2^n bytes [3]
 #  Fourth arg: Access Count for each subsystem [18]
 #  Fifth arg:  Iterations [3]
-#  Sixth arg:  churnCount [5]
+#  Sixth arg:  churnCount [1]
 
 ########################################################################
 # Unless otherwise specified, all parameters are expressed as exponents of 2.
@@ -28,67 +28,95 @@
 
 # # Test cost of access. Find where it saturates for churn = 1.
 # # Hold churnCount at 0 (i.e., 2^0 = 1)
-# # Hold system size  at 23
-# # Hold subsystem size at 8 (i.e., 256) and number of subsystems at 15
-# # Vary element size between 4 and 8 (i.e., 16 to 256 bytes)
-# # Vary accesses per iteration between 0 and 10 (1 to 1024 accesses)
+# # Vary system size, but start big
+# # Hold subsystem size constant
+# # Hold element size constant
+# # Vary accesses per iteration between -1 and 10 (1 to 1024 accesses)
 # # Hold iterations to 0 (1 iteration)
-# S=23
-# sS=8
-# for (( eS=4; eS<=8; ++eS )); do
-#     for (( aC=0; aC<=10; ++aC)); do
+# sS=9
+# eS=10
+# S=30
+# #for (( S=32; S<=34; ++S )); do
+#     for (( aC=-1; aC<=10; ++aC)); do
 #         (set -x; time $1 -$S $sS $eS $aC 0 0) || exit 1
+#     done
+# #done
+
+# # Test cost of churn alone (no access).
+# # Hold churnCount at 2 (i.e., 2^2 == 4)
+# # Hold number of elements at 25 (2^25)
+# # Vary element size; Total system size with vary with element size
+# # Hold access at zero except for churnCount.
+# cC=0
+# S=25
+# for (( nS=15; nS <= 18; nS+=3 )); do
+#     let "sS = S - nS"
+#     for (( eS=4; eS<=10; eS+=2 )); do
+#         (set -x; time $1 $nS $sS $eS -1 -1 $cC) || exit 1
 #     done
 # done
 
-# exit 0
+# Explore two dimensions: number of accesses and system size
 
-# Test cost of churn alone (no access).
-# Hold churnCount at 2 (i.e., 2^2 == 4)
-# Hold number of elements at 25 (2^25)
-# Vary element size; Total system size with vary with element size
-# Hold access at zero except for churnCount.
-cC=2
-S=24
-for (( nS=3; nS <= S-3; nS+=3 )); do
-    let "sS = S - nS"
-    for (( eS=3; eS<=10; eS++ )); do
-        (set -x; time $1 $nS $sS $eS -1 -1 $cC) || exit 1
-    done
+# 1st dimension: number of accesses
+# Hold system size constant at 2^29 bytes
+# Hold subsystem size constant at 2^17 elements
+# Hold element size constant at 2^8
+# Hold iterations constant at 2^0
+# Vary number of accesses from 2^6 to 2^9
+# Start with one run of zero iterations to measure churn overhead
+S=29
+sS=17
+eS=8
+(set -x; time $1 -$S $sS $eS 0 -1 0) || exit 1
+for (( aC=6; aC<=9; ++aC )); do
+    (set -x; time $1 -$S $sS $eS $aC 0 0) || exit 1
 done
 
-exit 0
-
-# For now, we will hold W and it constant; slider for aC and cC
-W=7
-it=1
-
-# We will do depth-ordered enumeration on S.
-for S in {17..22}; do
-    echo "***** System Size $S *****" >&2
-    for (( nS=0; nS<=S; ++nS)); do
-        if (( nS > 31 )); then # Max # of subsystems is 31
-            break;
-        elif (( S - nS > 31 )); then
-            ((nS = S - 31)) # Min # of subsystems so that no subsystem > 31
-        fi
-        let "sSb = S - nS"  # Subtracting exponents = dividing real values
-        echo "sSb = $sSb" >&2
-        for (( eS=0; eS<=sSb; eS++ )); do
-            if (( eS > 10 )); then # Max out at 1024-byte elements
-                break
-            fi
-            let "sS = sSb - eS"
-            echo "eS = $eS, sS = $sS" >&2
-            # Don't bother with aC of 0, since we know that accessing each
-            # element only once does not yield interesting results.
-            for (( aC=1; aC<=W-it; ++aC )); do
-                if (( aC > 8 )); then  # Max out at 256 accesses
-                    break;
-                fi
-                let "cC = W - aC - it"
-                (set -x; time $1 -$S $sS $eS $aC $it $cC) || exit 1
-            done
-        done
-    done
+# 2nd dimension: system size
+# Vary system size constant from 2^28 to 2^34 bytes by factors of 2^2
+# Hold subsystem size constant at 2^16 elements
+# Hold element size constant at 2^8
+# Hold iterations constant at 2^0
+# Hold number of accesses constant at 2^7
+sS=16
+eS=8
+aC=7
+for (( S=28; S<=34; S+=2 )); do
+    (set -x; time $1 -$S $sS $eS $aC 0 0) || exit 1
 done
+
+
+# # For now, we will hold W and it constant; slider for aC and cC
+# W=7
+# it=1
+
+# # We will do depth-ordered enumeration on S.
+# for S in {17..22}; do
+#     echo "***** System Size $S *****" >&2
+#     for (( nS=0; nS<=S; ++nS)); do
+#         if (( nS > 31 )); then # Max # of subsystems is 31
+#             break;
+#         elif (( S - nS > 31 )); then
+#             ((nS = S - 31)) # Min # of subsystems so that no subsystem > 31
+#         fi
+#         let "sSb = S - nS"  # Subtracting exponents = dividing real values
+#         echo "sSb = $sSb" >&2
+#         for (( eS=0; eS<=sSb; eS++ )); do
+#             if (( eS > 10 )); then # Max out at 1024-byte elements
+#                 break
+#             fi
+#             let "sS = sSb - eS"
+#             echo "eS = $eS, sS = $sS" >&2
+#             # Don't bother with aC of 0, since we know that accessing each
+#             # element only once does not yield interesting results.
+#             for (( aC=1; aC<=W-it; ++aC )); do
+#                 if (( aC > 8 )); then  # Max out at 256 accesses
+#                     break;
+#                 fi
+#                 let "cC = W - aC - it"
+#                 (set -x; time $1 -$S $sS $eS $aC $it $cC) || exit 1
+#             done
+#         done
+#     done
+# done

@@ -38,7 +38,7 @@ class Subsystem {
     {
         d_data.reserve(subsystemSize);
 	for (ptrdiff_t i = 0; i < subsystemSize; ++i) {
-            char c = 'A' + (i & 31);
+            char c = 'A' + (std::rand() & 31);
 	    d_data.emplace_back(elemSize, c);
         }
     }
@@ -102,7 +102,7 @@ void print(const char *label, const monotonic::vector<Subsystem>& system)
 void churn(monotonic::vector<Subsystem> *system, ptrdiff_t churnCount)
 {
     std::mt19937 rengine;
-//    std::uniform_int_distribution<ptrdiff_t> urand(0, system->size() - 1);
+    std::uniform_int_distribution<ptrdiff_t> urand(0, system->size() - 1);
 
     const ptrdiff_t nS = system->size();
     const ptrdiff_t sS = (*system)[0].size(); // Subsystem size
