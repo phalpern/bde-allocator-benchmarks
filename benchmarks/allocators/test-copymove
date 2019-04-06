@@ -4,8 +4,8 @@
 #  First arg: Number Subsystems - 2^n (Total system size in 2^n bytes if < 0)
 #  Second arg: Subsystem size in 2^n elements
 #  Third arg:  Element size in 2^n bytes [3]
-#  Fourth arg: Access Count for each subsystem [18]
-#  Fifth arg:  Iterations [3]
+#  Fourth arg: Iteration Count for each subsystem [18]
+#  Fifth arg:  Repetitions [3]
 #  Sixth arg:  churnCount [1]
 
 tests="$*"
@@ -26,28 +26,28 @@ function runtests {
 #  sS  Subsystem size, in elements
 #  sSb Subsystem size, in bytes
 #  eS  Element size, in bytes
-#  aC  Access count - accesses per element per iteration
-#  it  Iterations - Number of complete iterations over all subsystems
+#  iC  Iteration count - accesses per element within a subsystem
+#  rC  Repetition - Number of complete repetitions over all subsystems
 #  cC  Churn count (shuffle factor)
 
 # Compound "depth" parameters
 #  S   System size, in bytes (nS * sS * eS)
-#  W   Work per element (aC + cC + it)
+#  W   Work per element (iC + cC + rC)
 
 # #######################################################################
-# # Test cost of access. Find where it saturates for churn = 1.
+# # Test cost of access. Find where iC saturates for churn = 1.
 # # Hold churnCount at 0 (i.e., 2^0 = 1)
 # # Vary system size, but start big
 # # Hold subsystem size constant
 # # Hold element size constant
-# # Vary accesses per iteration between -1 and 10 (1 to 1024 accesses)
-# # Hold iterations to 0 (1 iteration)
+# # Vary iteration count between -1 and 10 (0 to 1024 accesses)
+# # Hold repetitions to 0 (1 iteration)
 # sS=9
 # eS=10
 # S=30
 # #for (( S=32; S<=34; ++S )); do
-#     for (( aC=-1; aC<=10; ++aC)); do
-#         runtests -$S $sS $eS $aC 0 0
+#     for (( iC=-1; iC<=10; ++iC)); do
+#         runtests -$S $sS $eS $iC 0 0
 #     done
 # #done
 # #######################################################################
@@ -75,80 +75,65 @@ function runtests {
 # # Hold system size constant at 2^29 bytes
 # # Hold subsystem size constant at 2^17 elements
 # # Hold element size constant at 2^8
-# # Hold iterations constant at 2^0
-# # Vary number of accesses from 2^6 to 2^9
+# # Hold repetitions constant at 2^0
+# # Vary iteration count from 2^6 to 2^9
 # # Start with one run of zero iterations to measure churn overhead
 # S=29
 # sS=17
 # eS=8
 # runtests -$S $sS $eS 0 -1 0
-# for (( aC=6; aC<=9; ++aC )); do
-#     runtests -$S $sS $eS $aC 0 0
+# for (( iC=6; iC<=9; ++iC )); do
+#     runtests -$S $sS $eS $iC 0 0
 # done
 
 # # 2nd dimension: system size
 # # Vary system size constant from 2^28 to 2^34 bytes by factors of 2^2
 # # Hold subsystem size constant at 2^16 elements
 # # Hold element size constant at 2^8
-# # Hold iterations constant at 2^0
-# # Hold number of accesses constant at 2^7
+# # Hold iteration count constant at 2^7
+# # Hold repetition count constant at 2^0
 # sS=16
 # eS=8
-# aC=7
+# iC=7
 # for (( S=28; S<=34; S+=2 )); do
-#     runtests -$S $sS $eS $aC 0 0
+#     runtests -$S $sS $eS $iC 0 0
 # done
 # #######################################################################
 
-#######################################################################
-# Vary size, covering large sizes at modest acceses
-# Vary system size starting at 2^34
-# Hold subsystem size constant at 2^16 elements
-# Hold element size constant at 2^8
-# Hold iterations constant at 2^0
-# Hold number of accesses constant at 2^2
-sS=16
-eS=8
-aC=2
-for (( S=34; S<=34; ++S )); do
-    runtests -$S $sS $eS -1 -1 0
-    runtests -$S $sS $eS $aC 0 0
+# #######################################################################
+# # Vary size, covering large sizes at modest acceses
+# # Vary system size starting at 2^34
+# # Hold subsystem size constant at 2^16 elements
+# # Hold element size constant at 2^8
+# # Hold iteration count constant at 2^2
+# # Hold repetition count constant at 2^0
+# sS=16
+# eS=8
+# iC=2
+# for (( S=35; S<=37; ++S )); do
+#     runtests -$S $sS $eS -1 -1 0
+#     runtests -$S $sS $eS $iC 0 0
+# done
+# #######################################################################
+
+# #######################################################################
+# Test small element sizes for constructives vs. destructive cache interferance
+#
+# Vary number of subsystems from 2^2 to 2^22
+# Hold subsystem size constant at 2^8
+# Hold element size constant at 2^0
+# Hold iteration count (per subsystem) at 2^0, i.e., 1 access
+# Vary repetition count inversely with system size, but no less than 2^3
+# Hold churn count constant at 2^0
+sS=8
+eS=0
+iC=0
+cC=0
+for (( nS=2; nS<=22; ++nS )); do
+    let "rC = 23 - nS"
+    if (( rC < 3 )); then
+        rC=3
+    fi
+    runtests $nS $sS $eS $iC $rC $cC
 done
 #######################################################################
-
-
-# #######################################################################
-# # For now, we will hold W and it constant; slider for aC and cC
-# W=7
-# it=1
-
-# # We will do depth-ordered enumeration on S.
-# for S in {17..22}; do
-#     echo "***** System Size $S *****" >&2
-#     for (( nS=0; nS<=S; ++nS)); do
-#         if (( nS > 31 )); then # Max # of subsystems is 31
-#             break;
-#         elif (( S - nS > 31 )); then
-#             ((nS = S - 31)) # Min # of subsystems so that no subsystem > 31
-#         fi
-#         let "sSb = S - nS"  # Subtracting exponents = dividing real values
-#         echo "sSb = $sSb" >&2
-#         for (( eS=0; eS<=sSb; eS++ )); do
-#             if (( eS > 10 )); then # Max out at 1024-byte elements
-#                 break
-#             fi
-#             let "sS = sSb - eS"
-#             echo "eS = $eS, sS = $sS" >&2
-#             # Don't bother with aC of 0, since we know that accessing each
-#             # element only once does not yield interesting results.
-#             for (( aC=1; aC<=W-it; ++aC )); do
-#                 if (( aC > 8 )); then  # Max out at 256 accesses
-#                     break;
-#                 fi
-#                 let "cC = W - aC - it"
-#                 runtests -$S $sS $eS $aC $it $cC
-#             done
-#         done
-#     done
-# done
-# #######################################################################

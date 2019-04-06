@@ -1,0 +1,11 @@
+** Measure churn only **
+Benchmark Arguments, use copies, use moves
+-34 16 8 -1 -1 0, 467.336s, 426.742s (91%)
+-35 16 8 -1 -1 0, 972.244s, 867.848s (89%)
+-36 16 8 -1 -1 0, 2584.817s, 1886.399s (73%)
+
+** Measure access **
+Benchmark Arguments, use copies, use moves
+-34 16 8 2 0 0, 775.868s, 1088.022s (140%)
+-35 16 8 2 0 0, 1996.099s, 3081.869s (154%)
+-36 16 8 2 0 0, 9178.176s, 88116.135s (960%)

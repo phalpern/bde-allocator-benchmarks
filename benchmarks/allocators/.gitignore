@@ -8,4 +8,6 @@ copymove-*
 growth-*
 shgrowth
 *-result
+*-result.*
 *.csv
+*.csv.*

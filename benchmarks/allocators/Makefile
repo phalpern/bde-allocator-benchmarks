@@ -180,8 +180,9 @@ run-locality: locality-AS1 locality-AS7 locality-AS9 locality-AS13
 	(cd results; ./reduce-locality-results)
 
 run-copymove: copymove-CP copymove-MV
-	./test-copymove ./copymove-CP ./copymove-MV >results/copymove-result 2>&1
+	./test-copymove ./copymove-CP ./copymove-MV 2>&1 | tee results/copymove-result
 	(cd results; ./reduce-copymove-results)
+	cat results/copymove.csv
 
 run-shuffle: locality-AS1
 	( \

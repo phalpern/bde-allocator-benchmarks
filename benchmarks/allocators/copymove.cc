@@ -43,15 +43,15 @@ class Subsystem {
         }
     }
 
-    void access(ptrdiff_t accessCount)
+    void access(ptrdiff_t iterationCount)
         // Ping the system, simulating read/write accesses proportional to the
-        // specified 'accessCount'.
+        // specified 'iterationCount'.
     {
 	if (d_data.empty()) {
 	    return;  // nothing to access
 	}
 
-	for (ptrdiff_t i = 0; i < accessCount; ++i) {
+	for (ptrdiff_t i = 0; i < iterationCount; ++i) {
             for (Element& e : d_data) {
                 // XOR last 3 bits of each byte of element into first byte
                 char x = 0;
@@ -154,25 +154,25 @@ int main(int argc, const char *argv[])
     ptrdiff_t numSubsystems    = argc > a ? atoi(argv[a++]) : 4;
     ptrdiff_t subsystemSize    = argc > a ? atoi(argv[a++]) : 20;
     ptrdiff_t elemSize         = argc > a ? atoi(argv[a++]) : 3;
-    ptrdiff_t accessCount      = argc > a ? atoi(argv[a++]) : 18;
-    ptrdiff_t iterations       = argc > a ? atoi(argv[a++]) : 3;
+    ptrdiff_t iterationCount   = argc > a ? atoi(argv[a++]) : 18;
+    ptrdiff_t repCount         = argc > a ? atoi(argv[a++]) : 3;
     ptrdiff_t churnCount       = argc > a ? atoi(argv[a++]) : 1;
 
 #ifdef VERBOSE
     std::cout << std::endl
-              << "numSubsystems = " << numSubsystems << std::endl
-              << "subsystemSize = " << subsystemSize << std::endl
-	      << "elementSize   = " << elemSize << std::endl
-	      << "accessCount   = " << accessCount << std::endl
-              << "iterations    = " << iterations << std::endl
-              << "churnCount    = " << churnCount << std::endl;
+              << "numSubsystems  = " << numSubsystems << std::endl
+              << "subsystemSize  = " << subsystemSize << std::endl
+	      << "elementSize    = " << elemSize << std::endl
+	      << "iterationCount = " << iterationCount << std::endl
+              << "repCount       = " << repCount << std::endl
+              << "churnCount     = " << churnCount << std::endl;
 #else
     std::cout << std::endl
               << "nS = " << numSubsystems << '\t'
               << "sS = " << subsystemSize << '\t'
               << "eS = " << elemSize << '\t'
-	      << "aC = " << accessCount << '\t'
-              << "it = " << iterations << '\t'
+	      << "iC = " << iterationCount << '\t'
+              << "rC = " << repCount << '\t'
               << "cC = " << churnCount << std::endl;
 #endif
 
@@ -187,18 +187,18 @@ int main(int argc, const char *argv[])
 
     ptrdiff_t systemSize = numSubsystems + subsystemSize + elemSize;
 
-    numSubsystems = 1 << numSubsystems;
-    subsystemSize = 1 << subsystemSize;
-    elemSize = 1 << elemSize;
-    accessCount = accessCount < 0 ? 0 : accessCount = 1 << accessCount;
-    iterations = iterations < 0 ? 0 : iterations = 1 << iterations;
-    churnCount = churnCount < 0 ? 0 : 1 << churnCount;
+    numSubsystems  = 1 << numSubsystems;
+    subsystemSize  = 1 << subsystemSize;
+    elemSize       = 1 << elemSize;
+    iterationCount = iterationCount < 0 ? 0 : 1 << iterationCount;
+    repCount       = repCount       < 0 ? 0 : 1 << repCount;
+    churnCount     = churnCount     < 0 ? 0 : 1 << churnCount;
 
     std::cout << "nS = " << numSubsystems << '\t'
               << "sS = " << subsystemSize << '\t'
               << "eS = " << elemSize << '\t'
-              << "aC = " << accessCount << '\t'
-              << "it = " << iterations << '\t'
+              << "aC = " << iterationCount << '\t'
+              << "rC = " << repCount << '\t'
               << "cC = " << churnCount << std::endl;
 
 // ----------------------------------------------------------------------------
@@ -232,9 +232,9 @@ int main(int argc, const char *argv[])
 
     churn(&system, churnCount);
 
-    for (ptrdiff_t n = 0; n < iterations; ++n) {
+    for (ptrdiff_t n = 0; n < repCount; ++n) {
         for (ptrdiff_t s = 0; s < numSubsystems; ++s) {
-	    system[s].access(accessCount);
+	    system[s].access(iterationCount);
         }
     }
 }

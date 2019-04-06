@@ -1,0 +1,96 @@
++ ./copymove-CP -34 16 8 -1 -1 0
+
+nS = -34	sS = 16	eS = 8	aC = -1	it = -1	cC = 0
+nS = 1024	sS = 65536	eS = 256	aC = 0	it = 0	cC = 1
+
+real	7m47.336s
+user	7m15.683s
+sys	0m29.459s
++ ./copymove-MV -34 16 8 -1 -1 0
+
+nS = -34	sS = 16	eS = 8	aC = -1	it = -1	cC = 0
+nS = 1024	sS = 65536	eS = 256	aC = 0	it = 0	cC = 1
+
+real	7m6.742s
+user	6m58.876s
+sys	0m7.734s
++ ./copymove-CP -34 16 8 2 0 0
+
+nS = -34	sS = 16	eS = 8	aC = 2	it = 0	cC = 0
+nS = 1024	sS = 65536	eS = 256	aC = 4	it = 1	cC = 1
+
+real	12m55.868s
+user	12m9.904s
+sys	0m41.546s
++ ./copymove-MV -34 16 8 2 0 0
+
+nS = -34	sS = 16	eS = 8	aC = 2	it = 0	cC = 0
+nS = 1024	sS = 65536	eS = 256	aC = 4	it = 1	cC = 1
+
+real	18m8.022s
+user	14m36.454s
+sys	2m36.920s
++ ./copymove-CP -35 16 8 -1 -1 0
+
+nS = -35	sS = 16	eS = 8	aC = -1	it = -1	cC = 0
+nS = 2048	sS = 65536	eS = 256	aC = 0	it = 0	cC = 1
+
+real	16m12.244s
+user	14m47.589s
+sys	1m12.900s
++ ./copymove-MV -35 16 8 -1 -1 0
+
+nS = -35	sS = 16	eS = 8	aC = -1	it = -1	cC = 0
+nS = 2048	sS = 65536	eS = 256	aC = 0	it = 0	cC = 1
+
+real	14m27.848s
+user	14m7.336s
+sys	0m19.973s
++ ./copymove-CP -35 16 8 2 0 0
+
+nS = -35	sS = 16	eS = 8	aC = 2	it = 0	cC = 0
+nS = 2048	sS = 65536	eS = 256	aC = 4	it = 1	cC = 1
+
+real	33m16.099s
+user	25m42.374s
+sys	4m9.128s
++ ./copymove-MV -35 16 8 2 0 0
+
+nS = -35	sS = 16	eS = 8	aC = 2	it = 0	cC = 0
+nS = 2048	sS = 65536	eS = 256	aC = 4	it = 1	cC = 1
+
+real	51m21.869s
+user	32m9.554s
+sys	13m44.077s
++ ./copymove-CP -36 16 8 -1 -1 0
+
+nS = -36	sS = 16	eS = 8	aC = -1	it = -1	cC = 0
+nS = 4096	sS = 65536	eS = 256	aC = 0	it = 0	cC = 1
+
+real	43m4.817s
+user	31m56.555s
+sys	5m29.583s
++ ./copymove-MV -36 16 8 -1 -1 0
+
+nS = -36	sS = 16	eS = 8	aC = -1	it = -1	cC = 0
+nS = 4096	sS = 65536	eS = 256	aC = 0	it = 0	cC = 1
+
+real	31m26.399s
+user	28m49.077s
+sys	1m31.337s
++ ./copymove-CP -36 16 8 2 0 0
+
+nS = -36	sS = 16	eS = 8	aC = 2	it = 0	cC = 0
+nS = 4096	sS = 65536	eS = 256	aC = 4	it = 1	cC = 1
+
+real	152m58.176s
+user	54m7.270s
+sys	34m38.079s
++ ./copymove-MV -36 16 8 2 0 0
+
+nS = -36	sS = 16	eS = 8	aC = 2	it = 0	cC = 0
+nS = 4096	sS = 65536	eS = 256	aC = 4	it = 1	cC = 1
+
+real	1468m36.135s
+user	73m39.319s
+sys	422m27.459s
