@@ -119,21 +119,20 @@ function runtests {
 # #######################################################################
 # Test small element sizes for constructives vs. destructive cache interferance
 #
-# Vary number of subsystems from 2^2 to 2^22
-# Hold subsystem size constant at 2^8
-# Hold element size constant at 2^0
+# Hold number of subsystems constant at 2^16
+# Hold subsystem size in bytes constant at 2^8
+# Vary element size from 2^0 to 2^5
+# Vary subsystem size in elements inversely to element size to keep at 2^8b
 # Hold iteration count (per subsystem) at 2^0, i.e., 1 access
-# Vary repetition count inversely with system size, but no less than 2^3
+# Hold repetition count constant at 2^7
 # Hold churn count constant at 2^0
-sS=8
-eS=0
+nS=16
+sSb=8
 iC=0
+rC=7
 cC=0
-for (( nS=2; nS<=22; ++nS )); do
-    let "rC = 23 - nS"
-    if (( rC < 3 )); then
-        rC=3
-    fi
+for (( eS=0; eS<=5; ++eS )); do
+    let "sS = sSb - eS"
     runtests $nS $sS $eS $iC $rC $cC
 done
 #######################################################################

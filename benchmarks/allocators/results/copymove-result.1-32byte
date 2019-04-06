@@ -1,0 +1,96 @@
++ ./copymove-CP 16 8 0 0 7 0
+
+nS = 16	sS = 8	eS = 0	iC = 0	rC = 7	cC = 0
+nS = 65536	sS = 256	eS = 1	aC = 1	rC = 128	cC = 1
+
+real	1m46.666s
+user	1m46.418s
+sys	0m0.228s
++ ./copymove-MV 16 8 0 0 7 0
+
+nS = 16	sS = 8	eS = 0	iC = 0	rC = 7	cC = 0
+nS = 65536	sS = 256	eS = 1	aC = 1	rC = 128	cC = 1
+
+real	4m51.611s
+user	4m51.351s
+sys	0m0.236s
++ ./copymove-CP 16 7 1 0 7 0
+
+nS = 16	sS = 7	eS = 1	iC = 0	rC = 7	cC = 0
+nS = 65536	sS = 128	eS = 2	aC = 1	rC = 128	cC = 1
+
+real	1m6.930s
+user	1m6.811s
+sys	0m0.106s
++ ./copymove-MV 16 7 1 0 7 0
+
+nS = 16	sS = 7	eS = 1	iC = 0	rC = 7	cC = 0
+nS = 65536	sS = 128	eS = 2	aC = 1	rC = 128	cC = 1
+
+real	2m35.589s
+user	2m35.439s
+sys	0m0.131s
++ ./copymove-CP 16 6 2 0 7 0
+
+nS = 16	sS = 6	eS = 2	iC = 0	rC = 7	cC = 0
+nS = 65536	sS = 64	eS = 4	aC = 1	rC = 128	cC = 1
+
+real	0m46.076s
+user	0m46.005s
+sys	0m0.059s
++ ./copymove-MV 16 6 2 0 7 0
+
+nS = 16	sS = 6	eS = 2	iC = 0	rC = 7	cC = 0
+nS = 65536	sS = 64	eS = 4	aC = 1	rC = 128	cC = 1
+
+real	1m27.816s
+user	1m27.732s
+sys	0m0.075s
++ ./copymove-CP 16 5 3 0 7 0
+
+nS = 16	sS = 5	eS = 3	iC = 0	rC = 7	cC = 0
+nS = 65536	sS = 32	eS = 8	aC = 1	rC = 128	cC = 1
+
+real	0m37.626s
+user	0m37.579s
+sys	0m0.037s
++ ./copymove-MV 16 5 3 0 7 0
+
+nS = 16	sS = 5	eS = 3	iC = 0	rC = 7	cC = 0
+nS = 65536	sS = 32	eS = 8	aC = 1	rC = 128	cC = 1
+
+real	0m58.607s
+user	0m58.549s
+sys	0m0.050s
++ ./copymove-CP 16 4 4 0 7 0
+
+nS = 16	sS = 4	eS = 4	iC = 0	rC = 7	cC = 0
+nS = 65536	sS = 16	eS = 16	aC = 1	rC = 128	cC = 1
+
+real	0m29.907s
+user	0m29.880s
+sys	0m0.022s
++ ./copymove-MV 16 4 4 0 7 0
+
+nS = 16	sS = 4	eS = 4	iC = 0	rC = 7	cC = 0
+nS = 65536	sS = 16	eS = 16	aC = 1	rC = 128	cC = 1
+
+real	0m41.940s
+user	0m41.906s
+sys	0m0.026s
++ ./copymove-CP 16 3 5 0 7 0
+
+nS = 16	sS = 3	eS = 5	iC = 0	rC = 7	cC = 0
+nS = 65536	sS = 8	eS = 32	aC = 1	rC = 128	cC = 1
+
+real	0m26.277s
+user	0m26.254s
+sys	0m0.017s
++ ./copymove-MV 16 3 5 0 7 0
+
+nS = 16	sS = 3	eS = 5	iC = 0	rC = 7	cC = 0
+nS = 65536	sS = 8	eS = 32	aC = 1	rC = 128	cC = 1
+
+real	0m33.948s
+user	0m33.920s
+sys	0m0.021s
