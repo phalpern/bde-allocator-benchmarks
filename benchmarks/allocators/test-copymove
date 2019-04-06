@@ -117,22 +117,41 @@ function runtests {
 # #######################################################################
 
 # #######################################################################
-# Test small element sizes for constructives vs. destructive cache interferance
+# # Test small element sizes for constructives vs. destructive cache interferance
+# #
+# # Hold number of subsystems constant at 2^16
+# # Hold subsystem size in bytes constant at 2^8
+# # Vary element size from 2^0 to 2^5
+# # Vary subsystem size in elements inversely to element size to keep at 2^8b
+# # Hold iteration count (per subsystem) at 2^0, i.e., 1 access
+# # Hold repetition count constant at 2^7
+# # Hold churn count constant at 2^0
+# nS=16
+# sSb=8
+# iC=0
+# rC=7
+# cC=0
+# for (( eS=0; eS<=5; ++eS )); do
+#     let "sS = sSb - eS"
+#     runtests $nS $sS $eS $iC $rC $cC
+# done
+# #######################################################################
+
+#######################################################################
+# Test 1-byte element size at different subsystem sizes
 #
-# Hold number of subsystems constant at 2^16
-# Hold subsystem size in bytes constant at 2^8
-# Vary element size from 2^0 to 2^5
-# Vary subsystem size in elements inversely to element size to keep at 2^8b
+# Hold total system size constant at 2^24
+# Vary subsystem size in elements from 2^4 to 2^23
+# Hold element size constant at 2^0 (1 byte)
 # Hold iteration count (per subsystem) at 2^0, i.e., 1 access
 # Hold repetition count constant at 2^7
 # Hold churn count constant at 2^0
-nS=16
-sSb=8
+S=24
+eS=0
 iC=0
 rC=7
 cC=0
-for (( eS=0; eS<=5; ++eS )); do
-    let "sS = sSb - eS"
-    runtests $nS $sS $eS $iC $rC $cC
+for (( sS=4; sS<S; ++sS )); do
+    runtests -$S $sS $eS $iC $rC $cC
 done
 #######################################################################
