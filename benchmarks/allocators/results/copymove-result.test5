@@ -302,20 +302,3 @@ nS = 1048576	sS = 256	eS = 1	aC = 1	rC = 8	cC = 1
 real	11m15.305s
 user	11m11.581s
 sys	0m3.415s
-+ ./copymove-CP 21 8 0 0 3 0
-
-nS = 21	sS = 8	eS = 0	iC = 0	rC = 3	cC = 0
-nS = 2097152	sS = 256	eS = 1	aC = 1	rC = 8	cC = 1
-
-real	88m31.021s
-user	25m58.221s
-sys	43m10.253s
-+ ./copymove-MV 21 8 0 0 3 0
-
-nS = 21	sS = 8	eS = 0	iC = 0	rC = 3	cC = 0
-nS = 2097152	sS = 256	eS = 1	aC = 1	rC = 8	cC = 1
-./test-copymove: line 14: 10525 Killed: 9               $test "$@"
-
-real	18m42.542s
-user	10m0.056s
-sys	6m15.414s
