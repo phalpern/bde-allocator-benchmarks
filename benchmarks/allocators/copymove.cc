@@ -12,7 +12,7 @@
 
 #include "allocont.h"
 
-using Element = monotonic::vector<char>;
+using Element = overaligned_monotonic::vector<char>;
 using std::ptrdiff_t;
 using std::size_t;
 
@@ -20,12 +20,12 @@ class Subsystem {
     // This class simulates a subsystem that might do various work on elements
     // that have different move vs. copy profiles
 
-    monotonic::vector<Element> d_data;
+    overaligned_monotonic::vector<Element> d_data;
 
     friend std::ostream& operator<<(std::ostream&, const Subsystem&);
 
   public:
-    using allocator_type = monotonic::allocator<Element>;
+    using allocator_type = overaligned_monotonic::allocator<Element>;
 
     Subsystem(const allocator_type& alloc)
         // Create a subsystem using the specified 'alloc' allocator.
@@ -90,7 +90,8 @@ std::ostream& operator<<(std::ostream& stream, const Subsystem& object)
     return stream << " }";
 }
 
-void print(const char *label, const monotonic::vector<Subsystem>& system)
+void print(const char *label,
+           const overaligned_monotonic::vector<Subsystem>& system)
 {
     std::cout << std::endl << label << ':' << std::endl;
 
@@ -99,7 +100,8 @@ void print(const char *label, const monotonic::vector<Subsystem>& system)
     }
 }
 
-void churn(monotonic::vector<Subsystem> *system, ptrdiff_t churnCount)
+void churn(overaligned_monotonic::vector<Subsystem> *system,
+           ptrdiff_t churnCount)
 {
     std::mt19937 rengine;
     std::uniform_int_distribution<ptrdiff_t> urand(0, system->size() - 1);
@@ -146,6 +148,34 @@ void churn(monotonic::vector<Subsystem> *system, ptrdiff_t churnCount)
 #ifdef VERBOSE
     print("configuration after churn", *system);
 #endif
+}
+
+void testOveralignedBufferedSequentialPool()
+    // Mini test driver for 'OveralignedBufferedSequentialPool'
+{
+    static const int CACHELINE_SIZE = 64;
+
+    union {
+        char  buffer[256];
+        void *aligner;
+    };
+
+    OveralignedBufferedSequentialPool pool(buffer, sizeof(buffer),
+                                           CACHELINE_SIZE);
+    void *p = nullptr;
+#define TEST_ALIGNED_ALLOC(n)                                           \
+    BSLS_ASSERT_OPT(0 == ((intptr_t) (p = pool.allocate(n)) & (n - 1)))
+
+    TEST_ALIGNED_ALLOC(1);
+    BSLS_ASSERT_OPT(buffer == p);
+    TEST_ALIGNED_ALLOC(2);
+    TEST_ALIGNED_ALLOC(4);
+    TEST_ALIGNED_ALLOC(8);
+    TEST_ALIGNED_ALLOC(CACHELINE_SIZE);
+    BSLS_ASSERT_OPT((char*) p > buffer);
+    BSLS_ASSERT_OPT(CACHELINE_SIZE + 16 >= ((char*) p - buffer));
+    BSLS_ASSERT_OPT(0 == ((intptr_t) (p = pool.allocate(256)) &
+                          (CACHELINE_SIZE - 1)));
 }
 
 int main(int argc, const char *argv[])
@@ -210,10 +240,19 @@ int main(int argc, const char *argv[])
               << std::endl;
 #endif
 
-    char buffer[1024];
-    BloombergLP::bdlma::BufferedSequentialPool pool(buffer, sizeof(buffer));
-    monotonic::allocator<Subsystem> alloc(&pool);
-    monotonic::vector<Subsystem> system(numSubsystems, alloc);
+    testOveralignedBufferedSequentialPool();
+
+    static const int CACHELINE_SIZE = 64;
+
+    union {
+        char  buffer[1024];
+        void *aligner;
+    };
+
+    OveralignedBufferedSequentialPool pool(buffer, sizeof(buffer),
+                                           CACHELINE_SIZE);
+    overaligned_monotonic::allocator<Subsystem> alloc(&pool);
+    overaligned_monotonic::vector<Subsystem> system(numSubsystems, alloc);
 
 #ifdef VERBOSE
     std::cout << std::endl

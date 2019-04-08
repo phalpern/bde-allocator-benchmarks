@@ -730,7 +730,7 @@ int main(int ac, char** av)
         usage(*av, 4);
     if (as < 1 || as > 14)
         usage(*av, 5);
-    if (reference < 0 || reference == 0 && (as != 1 && as != 8))
+    if (reference < 0 || (reference == 0 && as != 1 && as != 8))
         usage(*av, 6);
     bool csv = true;
 

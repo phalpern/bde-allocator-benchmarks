@@ -15,8 +15,8 @@ AR = /usr/local/opt/llvm/bin/llvm-ar
 RANLIB = /usr/local/opt/llvm/bin/llvm-ranlib
 BDEWAF = waf
 
-# OPTIM = -O3 -DBSLS_ASSERT_LEVEL_NONE
-OPTIM = -g
+OPTIM = -g -O3 -DBSLS_ASSERT_LEVEL_OPT
+# OPTIM = -g
 LTO =
 DEBUG =
 PARALLEL =
