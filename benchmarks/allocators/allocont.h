@@ -102,7 +102,7 @@ public:
         // then try allocating repeatedly until success. Given the allocation
         // strategy, it should take no more than two tries to get it right.
         while (d_alignOffset & alignMask) {
-            int diff = alignment - d_alignOffset;
+            int diff = alignment - (d_alignOffset & alignMask);
             (void) d_imp.allocate(diff);
             ret = d_imp.allocate(size);
             d_alignOffset = ((intptr_t) ret + size) & (d_maxAlign - 1);

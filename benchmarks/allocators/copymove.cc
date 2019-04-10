@@ -162,9 +162,11 @@ void testOveralignedBufferedSequentialPool()
 
     OveralignedBufferedSequentialPool pool(buffer, sizeof(buffer),
                                            CACHELINE_SIZE);
-    void *p = nullptr;
+    overaligned_monotonic::allocator<char> alloc(&pool);
+
+    char *p = nullptr;
 #define TEST_ALIGNED_ALLOC(n)                                           \
-    BSLS_ASSERT_OPT(0 == ((intptr_t) (p = pool.allocate(n)) & (n - 1)))
+    BSLS_ASSERT_OPT(0 == ((intptr_t) (p = alloc.allocate(n)) & (n - 1)))
 
     TEST_ALIGNED_ALLOC(1);
     BSLS_ASSERT_OPT(buffer == p);
@@ -172,9 +174,9 @@ void testOveralignedBufferedSequentialPool()
     TEST_ALIGNED_ALLOC(4);
     TEST_ALIGNED_ALLOC(8);
     TEST_ALIGNED_ALLOC(CACHELINE_SIZE);
-    BSLS_ASSERT_OPT((char*) p > buffer);
+    BSLS_ASSERT_OPT(p > buffer);
     BSLS_ASSERT_OPT(CACHELINE_SIZE + 16 >= ((char*) p - buffer));
-    BSLS_ASSERT_OPT(0 == ((intptr_t) (p = pool.allocate(256)) &
+    BSLS_ASSERT_OPT(0 == ((intptr_t) (p = alloc.allocate(256)) &
                           (CACHELINE_SIZE - 1)));
 }
 
