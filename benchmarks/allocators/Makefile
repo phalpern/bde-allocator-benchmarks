@@ -132,6 +132,14 @@ copymove-CP: copymove.cc allocont.h
 copymove-MV: copymove.cc allocont.h
 	$(CXX) -DUSE_MOVE -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
 
+# unique_chars example for AP4, demonstrating BufferedSequentalAllocator
+ap4-uniqchar-default: ap4-uniqchar.cc
+	$(CXX) -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
+ap4-uniqchar-alloc: ap4-uniqchar.cc
+	$(CXX) -DUSE_ALLOC -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
+ap4-uniqchar-winkout: ap4-uniqchar.cc
+	$(CXX) -DUSE_WINKOUT -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
+
 run: run-locality run-zation run-tention run-growth \
      run-shuffle run-schedule-AS1 run-schedule-AS7 run-copymove
 
@@ -218,3 +226,8 @@ run-zation: zation
 run-tention: tention
 	time ./test-tention | tee tention-result
 	mv tention-result results/
+
+run-ap4-uniqchar: ap4-uniqchar-default ap4-uniqchar-alloc ap4-uniqchar-winkout
+	time ./ap4-uniqchar-default
+	time ./ap4-uniqchar-alloc
+	time ./ap4-uniqchar-winkout

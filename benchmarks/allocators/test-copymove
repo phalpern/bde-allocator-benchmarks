@@ -174,12 +174,16 @@ function runtests {
 # Hold iteration count constant at 2^4
 # Repetition count varies inversely with system size (min 2^5)
 #######################################################################
-eS=6
+eS=0
 iC=4
 cC=0
-for (( S=7; S<=25; ++S )); do
-    let "rC = 30-S"
+for (( S=25; S<=25; ++S )); do
+    let "rC = 28-S"
     for (( sS=0; sS<=S-eS; ++sS )); do
+        if (( S-sS-eS >= 25 || sS >= 24 )); then
+            continue  # No one vector of vector may be larger than 2^25 elements
+        fi
         runtests -$S $sS $eS $iC $rC $cC
     done
+done
 done

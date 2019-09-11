@@ -1,0 +1,2736 @@
++ ./copymove-CP -8 0 8 4 22 0
+
+nS = -8	sS = 0	eS = 8	iC = 4	rC = 22	cC = 0
+nS = 1	sS = 1	eS = 256	aC = 16	rC = 4194304	cC = 1
+
+real	0m0.666s
+user	0m0.662s
+sys	0m0.002s
++ ./copymove-MV -8 0 8 4 22 0
+
+nS = -8	sS = 0	eS = 8	iC = 4	rC = 22	cC = 0
+nS = 1	sS = 1	eS = 256	aC = 16	rC = 4194304	cC = 1
+
+real	0m0.650s
+user	0m0.647s
+sys	0m0.001s
++ ./copymove-CP -9 0 8 4 21 0
+
+nS = -9	sS = 0	eS = 8	iC = 4	rC = 21	cC = 0
+nS = 2	sS = 1	eS = 256	aC = 16	rC = 2097152	cC = 1
+
+real	0m0.634s
+user	0m0.631s
+sys	0m0.001s
++ ./copymove-MV -9 0 8 4 21 0
+
+nS = -9	sS = 0	eS = 8	iC = 4	rC = 21	cC = 0
+nS = 2	sS = 1	eS = 256	aC = 16	rC = 2097152	cC = 1
+
+real	0m0.634s
+user	0m0.631s
+sys	0m0.001s
++ ./copymove-CP -9 1 8 4 21 0
+
+nS = -9	sS = 1	eS = 8	iC = 4	rC = 21	cC = 0
+nS = 1	sS = 2	eS = 256	aC = 16	rC = 2097152	cC = 1
+
+real	0m0.424s
+user	0m0.421s
+sys	0m0.001s
++ ./copymove-MV -9 1 8 4 21 0
+
+nS = -9	sS = 1	eS = 8	iC = 4	rC = 21	cC = 0
+nS = 1	sS = 2	eS = 256	aC = 16	rC = 2097152	cC = 1
+
+real	0m0.424s
+user	0m0.421s
+sys	0m0.001s
++ ./copymove-CP -10 0 8 4 20 0
+
+nS = -10	sS = 0	eS = 8	iC = 4	rC = 20	cC = 0
+nS = 4	sS = 1	eS = 256	aC = 16	rC = 1048576	cC = 1
+
+real	0m0.635s
+user	0m0.632s
+sys	0m0.001s
++ ./copymove-MV -10 0 8 4 20 0
+
+nS = -10	sS = 0	eS = 8	iC = 4	rC = 20	cC = 0
+nS = 4	sS = 1	eS = 256	aC = 16	rC = 1048576	cC = 1
+
+real	0m0.641s
+user	0m0.638s
+sys	0m0.001s
++ ./copymove-CP -10 1 8 4 20 0
+
+nS = -10	sS = 1	eS = 8	iC = 4	rC = 20	cC = 0
+nS = 2	sS = 2	eS = 256	aC = 16	rC = 1048576	cC = 1
+
+real	0m0.433s
+user	0m0.430s
+sys	0m0.002s
++ ./copymove-MV -10 1 8 4 20 0
+
+nS = -10	sS = 1	eS = 8	iC = 4	rC = 20	cC = 0
+nS = 2	sS = 2	eS = 256	aC = 16	rC = 1048576	cC = 1
+
+real	0m0.455s
+user	0m0.452s
+sys	0m0.001s
++ ./copymove-CP -10 2 8 4 20 0
+
+nS = -10	sS = 2	eS = 8	iC = 4	rC = 20	cC = 0
+nS = 1	sS = 4	eS = 256	aC = 16	rC = 1048576	cC = 1
+
+real	0m0.409s
+user	0m0.406s
+sys	0m0.001s
++ ./copymove-MV -10 2 8 4 20 0
+
+nS = -10	sS = 2	eS = 8	iC = 4	rC = 20	cC = 0
+nS = 1	sS = 4	eS = 256	aC = 16	rC = 1048576	cC = 1
+
+real	0m0.413s
+user	0m0.409s
+sys	0m0.001s
++ ./copymove-CP -11 0 8 4 19 0
+
+nS = -11	sS = 0	eS = 8	iC = 4	rC = 19	cC = 0
+nS = 8	sS = 1	eS = 256	aC = 16	rC = 524288	cC = 1
+
+real	0m0.632s
+user	0m0.628s
+sys	0m0.001s
++ ./copymove-MV -11 0 8 4 19 0
+
+nS = -11	sS = 0	eS = 8	iC = 4	rC = 19	cC = 0
+nS = 8	sS = 1	eS = 256	aC = 16	rC = 524288	cC = 1
+
+real	0m0.634s
+user	0m0.631s
+sys	0m0.001s
++ ./copymove-CP -11 1 8 4 19 0
+
+nS = -11	sS = 1	eS = 8	iC = 4	rC = 19	cC = 0
+nS = 4	sS = 2	eS = 256	aC = 16	rC = 524288	cC = 1
+
+real	0m0.426s
+user	0m0.423s
+sys	0m0.001s
++ ./copymove-MV -11 1 8 4 19 0
+
+nS = -11	sS = 1	eS = 8	iC = 4	rC = 19	cC = 0
+nS = 4	sS = 2	eS = 256	aC = 16	rC = 524288	cC = 1
+
+real	0m0.428s
+user	0m0.425s
+sys	0m0.002s
++ ./copymove-CP -11 2 8 4 19 0
+
+nS = -11	sS = 2	eS = 8	iC = 4	rC = 19	cC = 0
+nS = 2	sS = 4	eS = 256	aC = 16	rC = 524288	cC = 1
+
+real	0m0.421s
+user	0m0.419s
+sys	0m0.001s
++ ./copymove-MV -11 2 8 4 19 0
+
+nS = -11	sS = 2	eS = 8	iC = 4	rC = 19	cC = 0
+nS = 2	sS = 4	eS = 256	aC = 16	rC = 524288	cC = 1
+
+real	0m0.409s
+user	0m0.406s
+sys	0m0.001s
++ ./copymove-CP -11 3 8 4 19 0
+
+nS = -11	sS = 3	eS = 8	iC = 4	rC = 19	cC = 0
+nS = 1	sS = 8	eS = 256	aC = 16	rC = 524288	cC = 1
+
+real	0m0.398s
+user	0m0.395s
+sys	0m0.001s
++ ./copymove-MV -11 3 8 4 19 0
+
+nS = -11	sS = 3	eS = 8	iC = 4	rC = 19	cC = 0
+nS = 1	sS = 8	eS = 256	aC = 16	rC = 524288	cC = 1
+
+real	0m0.404s
+user	0m0.401s
+sys	0m0.001s
++ ./copymove-CP -12 0 8 4 18 0
+
+nS = -12	sS = 0	eS = 8	iC = 4	rC = 18	cC = 0
+nS = 16	sS = 1	eS = 256	aC = 16	rC = 262144	cC = 1
+
+real	0m0.633s
+user	0m0.630s
+sys	0m0.001s
++ ./copymove-MV -12 0 8 4 18 0
+
+nS = -12	sS = 0	eS = 8	iC = 4	rC = 18	cC = 0
+nS = 16	sS = 1	eS = 256	aC = 16	rC = 262144	cC = 1
+
+real	0m0.650s
+user	0m0.647s
+sys	0m0.002s
++ ./copymove-CP -12 1 8 4 18 0
+
+nS = -12	sS = 1	eS = 8	iC = 4	rC = 18	cC = 0
+nS = 8	sS = 2	eS = 256	aC = 16	rC = 262144	cC = 1
+
+real	0m0.424s
+user	0m0.421s
+sys	0m0.001s
++ ./copymove-MV -12 1 8 4 18 0
+
+nS = -12	sS = 1	eS = 8	iC = 4	rC = 18	cC = 0
+nS = 8	sS = 2	eS = 256	aC = 16	rC = 262144	cC = 1
+
+real	0m0.426s
+user	0m0.423s
+sys	0m0.001s
++ ./copymove-CP -12 2 8 4 18 0
+
+nS = -12	sS = 2	eS = 8	iC = 4	rC = 18	cC = 0
+nS = 4	sS = 4	eS = 256	aC = 16	rC = 262144	cC = 1
+
+real	0m0.415s
+user	0m0.412s
+sys	0m0.001s
++ ./copymove-MV -12 2 8 4 18 0
+
+nS = -12	sS = 2	eS = 8	iC = 4	rC = 18	cC = 0
+nS = 4	sS = 4	eS = 256	aC = 16	rC = 262144	cC = 1
+
+real	0m0.409s
+user	0m0.406s
+sys	0m0.001s
++ ./copymove-CP -12 3 8 4 18 0
+
+nS = -12	sS = 3	eS = 8	iC = 4	rC = 18	cC = 0
+nS = 2	sS = 8	eS = 256	aC = 16	rC = 262144	cC = 1
+
+real	0m0.400s
+user	0m0.397s
+sys	0m0.001s
++ ./copymove-MV -12 3 8 4 18 0
+
+nS = -12	sS = 3	eS = 8	iC = 4	rC = 18	cC = 0
+nS = 2	sS = 8	eS = 256	aC = 16	rC = 262144	cC = 1
+
+real	0m0.400s
+user	0m0.397s
+sys	0m0.001s
++ ./copymove-CP -12 4 8 4 18 0
+
+nS = -12	sS = 4	eS = 8	iC = 4	rC = 18	cC = 0
+nS = 1	sS = 16	eS = 256	aC = 16	rC = 262144	cC = 1
+
+real	0m0.394s
+user	0m0.391s
+sys	0m0.001s
++ ./copymove-MV -12 4 8 4 18 0
+
+nS = -12	sS = 4	eS = 8	iC = 4	rC = 18	cC = 0
+nS = 1	sS = 16	eS = 256	aC = 16	rC = 262144	cC = 1
+
+real	0m0.395s
+user	0m0.392s
+sys	0m0.002s
++ ./copymove-CP -13 0 8 4 17 0
+
+nS = -13	sS = 0	eS = 8	iC = 4	rC = 17	cC = 0
+nS = 32	sS = 1	eS = 256	aC = 16	rC = 131072	cC = 1
+
+real	0m0.632s
+user	0m0.629s
+sys	0m0.001s
++ ./copymove-MV -13 0 8 4 17 0
+
+nS = -13	sS = 0	eS = 8	iC = 4	rC = 17	cC = 0
+nS = 32	sS = 1	eS = 256	aC = 16	rC = 131072	cC = 1
+
+real	0m0.631s
+user	0m0.628s
+sys	0m0.001s
++ ./copymove-CP -13 1 8 4 17 0
+
+nS = -13	sS = 1	eS = 8	iC = 4	rC = 17	cC = 0
+nS = 16	sS = 2	eS = 256	aC = 16	rC = 131072	cC = 1
+
+real	0m0.433s
+user	0m0.430s
+sys	0m0.001s
++ ./copymove-MV -13 1 8 4 17 0
+
+nS = -13	sS = 1	eS = 8	iC = 4	rC = 17	cC = 0
+nS = 16	sS = 2	eS = 256	aC = 16	rC = 131072	cC = 1
+
+real	0m0.424s
+user	0m0.421s
+sys	0m0.001s
++ ./copymove-CP -13 2 8 4 17 0
+
+nS = -13	sS = 2	eS = 8	iC = 4	rC = 17	cC = 0
+nS = 8	sS = 4	eS = 256	aC = 16	rC = 131072	cC = 1
+
+real	0m0.415s
+user	0m0.413s
+sys	0m0.001s
++ ./copymove-MV -13 2 8 4 17 0
+
+nS = -13	sS = 2	eS = 8	iC = 4	rC = 17	cC = 0
+nS = 8	sS = 4	eS = 256	aC = 16	rC = 131072	cC = 1
+
+real	0m0.408s
+user	0m0.405s
+sys	0m0.001s
++ ./copymove-CP -13 3 8 4 17 0
+
+nS = -13	sS = 3	eS = 8	iC = 4	rC = 17	cC = 0
+nS = 4	sS = 8	eS = 256	aC = 16	rC = 131072	cC = 1
+
+real	0m0.399s
+user	0m0.396s
+sys	0m0.001s
++ ./copymove-MV -13 3 8 4 17 0
+
+nS = -13	sS = 3	eS = 8	iC = 4	rC = 17	cC = 0
+nS = 4	sS = 8	eS = 256	aC = 16	rC = 131072	cC = 1
+
+real	0m0.399s
+user	0m0.396s
+sys	0m0.001s
++ ./copymove-CP -13 4 8 4 17 0
+
+nS = -13	sS = 4	eS = 8	iC = 4	rC = 17	cC = 0
+nS = 2	sS = 16	eS = 256	aC = 16	rC = 131072	cC = 1
+
+real	0m0.394s
+user	0m0.391s
+sys	0m0.001s
++ ./copymove-MV -13 4 8 4 17 0
+
+nS = -13	sS = 4	eS = 8	iC = 4	rC = 17	cC = 0
+nS = 2	sS = 16	eS = 256	aC = 16	rC = 131072	cC = 1
+
+real	0m0.396s
+user	0m0.393s
+sys	0m0.001s
++ ./copymove-CP -13 5 8 4 17 0
+
+nS = -13	sS = 5	eS = 8	iC = 4	rC = 17	cC = 0
+nS = 1	sS = 32	eS = 256	aC = 16	rC = 131072	cC = 1
+
+real	0m0.402s
+user	0m0.399s
+sys	0m0.001s
++ ./copymove-MV -13 5 8 4 17 0
+
+nS = -13	sS = 5	eS = 8	iC = 4	rC = 17	cC = 0
+nS = 1	sS = 32	eS = 256	aC = 16	rC = 131072	cC = 1
+
+real	0m0.408s
+user	0m0.405s
+sys	0m0.001s
++ ./copymove-CP -14 0 8 4 16 0
+
+nS = -14	sS = 0	eS = 8	iC = 4	rC = 16	cC = 0
+nS = 64	sS = 1	eS = 256	aC = 16	rC = 65536	cC = 1
+
+real	0m0.633s
+user	0m0.630s
+sys	0m0.001s
++ ./copymove-MV -14 0 8 4 16 0
+
+nS = -14	sS = 0	eS = 8	iC = 4	rC = 16	cC = 0
+nS = 64	sS = 1	eS = 256	aC = 16	rC = 65536	cC = 1
+
+real	0m0.634s
+user	0m0.631s
+sys	0m0.001s
++ ./copymove-CP -14 1 8 4 16 0
+
+nS = -14	sS = 1	eS = 8	iC = 4	rC = 16	cC = 0
+nS = 32	sS = 2	eS = 256	aC = 16	rC = 65536	cC = 1
+
+real	0m0.424s
+user	0m0.421s
+sys	0m0.001s
++ ./copymove-MV -14 1 8 4 16 0
+
+nS = -14	sS = 1	eS = 8	iC = 4	rC = 16	cC = 0
+nS = 32	sS = 2	eS = 256	aC = 16	rC = 65536	cC = 1
+
+real	0m0.426s
+user	0m0.423s
+sys	0m0.001s
++ ./copymove-CP -14 2 8 4 16 0
+
+nS = -14	sS = 2	eS = 8	iC = 4	rC = 16	cC = 0
+nS = 16	sS = 4	eS = 256	aC = 16	rC = 65536	cC = 1
+
+real	0m0.409s
+user	0m0.405s
+sys	0m0.002s
++ ./copymove-MV -14 2 8 4 16 0
+
+nS = -14	sS = 2	eS = 8	iC = 4	rC = 16	cC = 0
+nS = 16	sS = 4	eS = 256	aC = 16	rC = 65536	cC = 1
+
+real	0m0.410s
+user	0m0.407s
+sys	0m0.001s
++ ./copymove-CP -14 3 8 4 16 0
+
+nS = -14	sS = 3	eS = 8	iC = 4	rC = 16	cC = 0
+nS = 8	sS = 8	eS = 256	aC = 16	rC = 65536	cC = 1
+
+real	0m0.398s
+user	0m0.395s
+sys	0m0.001s
++ ./copymove-MV -14 3 8 4 16 0
+
+nS = -14	sS = 3	eS = 8	iC = 4	rC = 16	cC = 0
+nS = 8	sS = 8	eS = 256	aC = 16	rC = 65536	cC = 1
+
+real	0m0.400s
+user	0m0.397s
+sys	0m0.001s
++ ./copymove-CP -14 4 8 4 16 0
+
+nS = -14	sS = 4	eS = 8	iC = 4	rC = 16	cC = 0
+nS = 4	sS = 16	eS = 256	aC = 16	rC = 65536	cC = 1
+
+real	0m0.402s
+user	0m0.398s
+sys	0m0.001s
++ ./copymove-MV -14 4 8 4 16 0
+
+nS = -14	sS = 4	eS = 8	iC = 4	rC = 16	cC = 0
+nS = 4	sS = 16	eS = 256	aC = 16	rC = 65536	cC = 1
+
+real	0m0.403s
+user	0m0.400s
+sys	0m0.001s
++ ./copymove-CP -14 5 8 4 16 0
+
+nS = -14	sS = 5	eS = 8	iC = 4	rC = 16	cC = 0
+nS = 2	sS = 32	eS = 256	aC = 16	rC = 65536	cC = 1
+
+real	0m0.411s
+user	0m0.407s
+sys	0m0.001s
++ ./copymove-MV -14 5 8 4 16 0
+
+nS = -14	sS = 5	eS = 8	iC = 4	rC = 16	cC = 0
+nS = 2	sS = 32	eS = 256	aC = 16	rC = 65536	cC = 1
+
+real	0m0.409s
+user	0m0.405s
+sys	0m0.001s
++ ./copymove-CP -14 6 8 4 16 0
+
+nS = -14	sS = 6	eS = 8	iC = 4	rC = 16	cC = 0
+nS = 1	sS = 64	eS = 256	aC = 16	rC = 65536	cC = 1
+
+real	0m0.397s
+user	0m0.393s
+sys	0m0.002s
++ ./copymove-MV -14 6 8 4 16 0
+
+nS = -14	sS = 6	eS = 8	iC = 4	rC = 16	cC = 0
+nS = 1	sS = 64	eS = 256	aC = 16	rC = 65536	cC = 1
+
+real	0m0.397s
+user	0m0.394s
+sys	0m0.001s
++ ./copymove-CP -15 0 8 4 15 0
+
+nS = -15	sS = 0	eS = 8	iC = 4	rC = 15	cC = 0
+nS = 128	sS = 1	eS = 256	aC = 16	rC = 32768	cC = 1
+
+real	0m0.639s
+user	0m0.636s
+sys	0m0.001s
++ ./copymove-MV -15 0 8 4 15 0
+
+nS = -15	sS = 0	eS = 8	iC = 4	rC = 15	cC = 0
+nS = 128	sS = 1	eS = 256	aC = 16	rC = 32768	cC = 1
+
+real	0m0.636s
+user	0m0.633s
+sys	0m0.001s
++ ./copymove-CP -15 1 8 4 15 0
+
+nS = -15	sS = 1	eS = 8	iC = 4	rC = 15	cC = 0
+nS = 64	sS = 2	eS = 256	aC = 16	rC = 32768	cC = 1
+
+real	0m0.430s
+user	0m0.427s
+sys	0m0.001s
++ ./copymove-MV -15 1 8 4 15 0
+
+nS = -15	sS = 1	eS = 8	iC = 4	rC = 15	cC = 0
+nS = 64	sS = 2	eS = 256	aC = 16	rC = 32768	cC = 1
+
+real	0m0.432s
+user	0m0.429s
+sys	0m0.001s
++ ./copymove-CP -15 2 8 4 15 0
+
+nS = -15	sS = 2	eS = 8	iC = 4	rC = 15	cC = 0
+nS = 32	sS = 4	eS = 256	aC = 16	rC = 32768	cC = 1
+
+real	0m0.412s
+user	0m0.409s
+sys	0m0.001s
++ ./copymove-MV -15 2 8 4 15 0
+
+nS = -15	sS = 2	eS = 8	iC = 4	rC = 15	cC = 0
+nS = 32	sS = 4	eS = 256	aC = 16	rC = 32768	cC = 1
+
+real	0m0.415s
+user	0m0.412s
+sys	0m0.001s
++ ./copymove-CP -15 3 8 4 15 0
+
+nS = -15	sS = 3	eS = 8	iC = 4	rC = 15	cC = 0
+nS = 16	sS = 8	eS = 256	aC = 16	rC = 32768	cC = 1
+
+real	0m0.402s
+user	0m0.399s
+sys	0m0.001s
++ ./copymove-MV -15 3 8 4 15 0
+
+nS = -15	sS = 3	eS = 8	iC = 4	rC = 15	cC = 0
+nS = 16	sS = 8	eS = 256	aC = 16	rC = 32768	cC = 1
+
+real	0m0.402s
+user	0m0.399s
+sys	0m0.001s
++ ./copymove-CP -15 4 8 4 15 0
+
+nS = -15	sS = 4	eS = 8	iC = 4	rC = 15	cC = 0
+nS = 8	sS = 16	eS = 256	aC = 16	rC = 32768	cC = 1
+
+real	0m0.403s
+user	0m0.400s
+sys	0m0.001s
++ ./copymove-MV -15 4 8 4 15 0
+
+nS = -15	sS = 4	eS = 8	iC = 4	rC = 15	cC = 0
+nS = 8	sS = 16	eS = 256	aC = 16	rC = 32768	cC = 1
+
+real	0m0.400s
+user	0m0.397s
+sys	0m0.001s
++ ./copymove-CP -15 5 8 4 15 0
+
+nS = -15	sS = 5	eS = 8	iC = 4	rC = 15	cC = 0
+nS = 4	sS = 32	eS = 256	aC = 16	rC = 32768	cC = 1
+
+real	0m0.408s
+user	0m0.405s
+sys	0m0.001s
++ ./copymove-MV -15 5 8 4 15 0
+
+nS = -15	sS = 5	eS = 8	iC = 4	rC = 15	cC = 0
+nS = 4	sS = 32	eS = 256	aC = 16	rC = 32768	cC = 1
+
+real	0m0.408s
+user	0m0.405s
+sys	0m0.001s
++ ./copymove-CP -15 6 8 4 15 0
+
+nS = -15	sS = 6	eS = 8	iC = 4	rC = 15	cC = 0
+nS = 2	sS = 64	eS = 256	aC = 16	rC = 32768	cC = 1
+
+real	0m0.402s
+user	0m0.399s
+sys	0m0.001s
++ ./copymove-MV -15 6 8 4 15 0
+
+nS = -15	sS = 6	eS = 8	iC = 4	rC = 15	cC = 0
+nS = 2	sS = 64	eS = 256	aC = 16	rC = 32768	cC = 1
+
+real	0m0.408s
+user	0m0.405s
+sys	0m0.001s
++ ./copymove-CP -15 7 8 4 15 0
+
+nS = -15	sS = 7	eS = 8	iC = 4	rC = 15	cC = 0
+nS = 1	sS = 128	eS = 256	aC = 16	rC = 32768	cC = 1
+
+real	0m0.449s
+user	0m0.446s
+sys	0m0.001s
++ ./copymove-MV -15 7 8 4 15 0
+
+nS = -15	sS = 7	eS = 8	iC = 4	rC = 15	cC = 0
+nS = 1	sS = 128	eS = 256	aC = 16	rC = 32768	cC = 1
+
+real	0m0.450s
+user	0m0.447s
+sys	0m0.001s
++ ./copymove-CP -16 0 8 4 14 0
+
+nS = -16	sS = 0	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 256	sS = 1	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.633s
+user	0m0.630s
+sys	0m0.001s
++ ./copymove-MV -16 0 8 4 14 0
+
+nS = -16	sS = 0	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 256	sS = 1	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.636s
+user	0m0.633s
+sys	0m0.001s
++ ./copymove-CP -16 1 8 4 14 0
+
+nS = -16	sS = 1	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 128	sS = 2	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.428s
+user	0m0.425s
+sys	0m0.001s
++ ./copymove-MV -16 1 8 4 14 0
+
+nS = -16	sS = 1	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 128	sS = 2	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.434s
+user	0m0.431s
+sys	0m0.001s
++ ./copymove-CP -16 2 8 4 14 0
+
+nS = -16	sS = 2	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 64	sS = 4	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.411s
+user	0m0.408s
+sys	0m0.001s
++ ./copymove-MV -16 2 8 4 14 0
+
+nS = -16	sS = 2	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 64	sS = 4	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.421s
+user	0m0.418s
+sys	0m0.001s
++ ./copymove-CP -16 3 8 4 14 0
+
+nS = -16	sS = 3	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 32	sS = 8	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.402s
+user	0m0.398s
+sys	0m0.001s
++ ./copymove-MV -16 3 8 4 14 0
+
+nS = -16	sS = 3	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 32	sS = 8	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.409s
+user	0m0.406s
+sys	0m0.001s
++ ./copymove-CP -16 4 8 4 14 0
+
+nS = -16	sS = 4	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 16	sS = 16	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.400s
+user	0m0.397s
+sys	0m0.001s
++ ./copymove-MV -16 4 8 4 14 0
+
+nS = -16	sS = 4	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 16	sS = 16	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.402s
+user	0m0.399s
+sys	0m0.001s
++ ./copymove-CP -16 5 8 4 14 0
+
+nS = -16	sS = 5	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 8	sS = 32	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.409s
+user	0m0.406s
+sys	0m0.001s
++ ./copymove-MV -16 5 8 4 14 0
+
+nS = -16	sS = 5	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 8	sS = 32	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.408s
+user	0m0.405s
+sys	0m0.001s
++ ./copymove-CP -16 6 8 4 14 0
+
+nS = -16	sS = 6	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 4	sS = 64	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.403s
+user	0m0.400s
+sys	0m0.001s
++ ./copymove-MV -16 6 8 4 14 0
+
+nS = -16	sS = 6	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 4	sS = 64	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.411s
+user	0m0.409s
+sys	0m0.001s
++ ./copymove-CP -16 7 8 4 14 0
+
+nS = -16	sS = 7	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 2	sS = 128	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.496s
+user	0m0.493s
+sys	0m0.001s
++ ./copymove-MV -16 7 8 4 14 0
+
+nS = -16	sS = 7	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 2	sS = 128	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.453s
+user	0m0.450s
+sys	0m0.001s
++ ./copymove-CP -16 8 8 4 14 0
+
+nS = -16	sS = 8	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 1	sS = 256	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.464s
+user	0m0.461s
+sys	0m0.001s
++ ./copymove-MV -16 8 8 4 14 0
+
+nS = -16	sS = 8	eS = 8	iC = 4	rC = 14	cC = 0
+nS = 1	sS = 256	eS = 256	aC = 16	rC = 16384	cC = 1
+
+real	0m0.456s
+user	0m0.453s
+sys	0m0.001s
++ ./copymove-CP -17 0 8 4 13 0
+
+nS = -17	sS = 0	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 512	sS = 1	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.635s
+user	0m0.632s
+sys	0m0.002s
++ ./copymove-MV -17 0 8 4 13 0
+
+nS = -17	sS = 0	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 512	sS = 1	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.638s
+user	0m0.635s
+sys	0m0.001s
++ ./copymove-CP -17 1 8 4 13 0
+
+nS = -17	sS = 1	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 256	sS = 2	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.437s
+user	0m0.434s
+sys	0m0.001s
++ ./copymove-MV -17 1 8 4 13 0
+
+nS = -17	sS = 1	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 256	sS = 2	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.442s
+user	0m0.439s
+sys	0m0.001s
++ ./copymove-CP -17 2 8 4 13 0
+
+nS = -17	sS = 2	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 128	sS = 4	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.411s
+user	0m0.408s
+sys	0m0.001s
++ ./copymove-MV -17 2 8 4 13 0
+
+nS = -17	sS = 2	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 128	sS = 4	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.418s
+user	0m0.415s
+sys	0m0.002s
++ ./copymove-CP -17 3 8 4 13 0
+
+nS = -17	sS = 3	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 64	sS = 8	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.410s
+user	0m0.407s
+sys	0m0.001s
++ ./copymove-MV -17 3 8 4 13 0
+
+nS = -17	sS = 3	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 64	sS = 8	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.408s
+user	0m0.405s
+sys	0m0.001s
++ ./copymove-CP -17 4 8 4 13 0
+
+nS = -17	sS = 4	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 32	sS = 16	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.402s
+user	0m0.399s
+sys	0m0.001s
++ ./copymove-MV -17 4 8 4 13 0
+
+nS = -17	sS = 4	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 32	sS = 16	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.403s
+user	0m0.400s
+sys	0m0.001s
++ ./copymove-CP -17 5 8 4 13 0
+
+nS = -17	sS = 5	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 16	sS = 32	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.411s
+user	0m0.408s
+sys	0m0.001s
++ ./copymove-MV -17 5 8 4 13 0
+
+nS = -17	sS = 5	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 16	sS = 32	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.414s
+user	0m0.411s
+sys	0m0.001s
++ ./copymove-CP -17 6 8 4 13 0
+
+nS = -17	sS = 6	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 8	sS = 64	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.412s
+user	0m0.409s
+sys	0m0.001s
++ ./copymove-MV -17 6 8 4 13 0
+
+nS = -17	sS = 6	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 8	sS = 64	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.417s
+user	0m0.414s
+sys	0m0.001s
++ ./copymove-CP -17 7 8 4 13 0
+
+nS = -17	sS = 7	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 4	sS = 128	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.447s
+user	0m0.444s
+sys	0m0.001s
++ ./copymove-MV -17 7 8 4 13 0
+
+nS = -17	sS = 7	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 4	sS = 128	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.499s
+user	0m0.496s
+sys	0m0.001s
++ ./copymove-CP -17 8 8 4 13 0
+
+nS = -17	sS = 8	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 2	sS = 256	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.525s
+user	0m0.522s
+sys	0m0.001s
++ ./copymove-MV -17 8 8 4 13 0
+
+nS = -17	sS = 8	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 2	sS = 256	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.475s
+user	0m0.472s
+sys	0m0.001s
++ ./copymove-CP -17 9 8 4 13 0
+
+nS = -17	sS = 9	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 1	sS = 512	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.470s
+user	0m0.467s
+sys	0m0.001s
++ ./copymove-MV -17 9 8 4 13 0
+
+nS = -17	sS = 9	eS = 8	iC = 4	rC = 13	cC = 0
+nS = 1	sS = 512	eS = 256	aC = 16	rC = 8192	cC = 1
+
+real	0m0.455s
+user	0m0.452s
+sys	0m0.001s
++ ./copymove-CP -18 0 8 4 12 0
+
+nS = -18	sS = 0	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 1024	sS = 1	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.647s
+user	0m0.644s
+sys	0m0.001s
++ ./copymove-MV -18 0 8 4 12 0
+
+nS = -18	sS = 0	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 1024	sS = 1	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.677s
+user	0m0.674s
+sys	0m0.001s
++ ./copymove-CP -18 1 8 4 12 0
+
+nS = -18	sS = 1	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 512	sS = 2	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.432s
+user	0m0.429s
+sys	0m0.001s
++ ./copymove-MV -18 1 8 4 12 0
+
+nS = -18	sS = 1	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 512	sS = 2	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.462s
+user	0m0.459s
+sys	0m0.001s
++ ./copymove-CP -18 2 8 4 12 0
+
+nS = -18	sS = 2	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 256	sS = 4	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.415s
+user	0m0.412s
+sys	0m0.001s
++ ./copymove-MV -18 2 8 4 12 0
+
+nS = -18	sS = 2	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 256	sS = 4	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.434s
+user	0m0.430s
+sys	0m0.001s
++ ./copymove-CP -18 3 8 4 12 0
+
+nS = -18	sS = 3	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 128	sS = 8	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.408s
+user	0m0.405s
+sys	0m0.001s
++ ./copymove-MV -18 3 8 4 12 0
+
+nS = -18	sS = 3	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 128	sS = 8	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.423s
+user	0m0.420s
+sys	0m0.001s
++ ./copymove-CP -18 4 8 4 12 0
+
+nS = -18	sS = 4	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 64	sS = 16	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.407s
+user	0m0.404s
+sys	0m0.001s
++ ./copymove-MV -18 4 8 4 12 0
+
+nS = -18	sS = 4	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 64	sS = 16	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.426s
+user	0m0.423s
+sys	0m0.001s
++ ./copymove-CP -18 5 8 4 12 0
+
+nS = -18	sS = 5	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 32	sS = 32	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.417s
+user	0m0.414s
+sys	0m0.001s
++ ./copymove-MV -18 5 8 4 12 0
+
+nS = -18	sS = 5	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 32	sS = 32	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.423s
+user	0m0.420s
+sys	0m0.001s
++ ./copymove-CP -18 6 8 4 12 0
+
+nS = -18	sS = 6	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 16	sS = 64	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.410s
+user	0m0.407s
+sys	0m0.001s
++ ./copymove-MV -18 6 8 4 12 0
+
+nS = -18	sS = 6	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 16	sS = 64	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.431s
+user	0m0.428s
+sys	0m0.001s
++ ./copymove-CP -18 7 8 4 12 0
+
+nS = -18	sS = 7	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 8	sS = 128	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.461s
+user	0m0.458s
+sys	0m0.001s
++ ./copymove-MV -18 7 8 4 12 0
+
+nS = -18	sS = 7	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 8	sS = 128	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.504s
+user	0m0.501s
+sys	0m0.001s
++ ./copymove-CP -18 8 8 4 12 0
+
+nS = -18	sS = 8	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 4	sS = 256	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.472s
+user	0m0.469s
+sys	0m0.001s
++ ./copymove-MV -18 8 8 4 12 0
+
+nS = -18	sS = 8	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 4	sS = 256	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.533s
+user	0m0.530s
+sys	0m0.002s
++ ./copymove-CP -18 9 8 4 12 0
+
+nS = -18	sS = 9	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 2	sS = 512	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.461s
+user	0m0.458s
+sys	0m0.001s
++ ./copymove-MV -18 9 8 4 12 0
+
+nS = -18	sS = 9	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 2	sS = 512	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.463s
+user	0m0.460s
+sys	0m0.001s
++ ./copymove-CP -18 10 8 4 12 0
+
+nS = -18	sS = 10	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 1	sS = 1024	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.493s
+user	0m0.490s
+sys	0m0.001s
++ ./copymove-MV -18 10 8 4 12 0
+
+nS = -18	sS = 10	eS = 8	iC = 4	rC = 12	cC = 0
+nS = 1	sS = 1024	eS = 256	aC = 16	rC = 4096	cC = 1
+
+real	0m0.567s
+user	0m0.564s
+sys	0m0.001s
++ ./copymove-CP -19 0 8 4 11 0
+
+nS = -19	sS = 0	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 2048	sS = 1	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.635s
+user	0m0.632s
+sys	0m0.001s
++ ./copymove-MV -19 0 8 4 11 0
+
+nS = -19	sS = 0	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 2048	sS = 1	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.696s
+user	0m0.693s
+sys	0m0.001s
++ ./copymove-CP -19 1 8 4 11 0
+
+nS = -19	sS = 1	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 1024	sS = 2	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.438s
+user	0m0.435s
+sys	0m0.001s
++ ./copymove-MV -19 1 8 4 11 0
+
+nS = -19	sS = 1	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 1024	sS = 2	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.479s
+user	0m0.476s
+sys	0m0.002s
++ ./copymove-CP -19 2 8 4 11 0
+
+nS = -19	sS = 2	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 512	sS = 4	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.417s
+user	0m0.414s
+sys	0m0.001s
++ ./copymove-MV -19 2 8 4 11 0
+
+nS = -19	sS = 2	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 512	sS = 4	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.451s
+user	0m0.448s
+sys	0m0.001s
++ ./copymove-CP -19 3 8 4 11 0
+
+nS = -19	sS = 3	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 256	sS = 8	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.411s
+user	0m0.408s
+sys	0m0.001s
++ ./copymove-MV -19 3 8 4 11 0
+
+nS = -19	sS = 3	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 256	sS = 8	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.437s
+user	0m0.434s
+sys	0m0.001s
++ ./copymove-CP -19 4 8 4 11 0
+
+nS = -19	sS = 4	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 128	sS = 16	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.404s
+user	0m0.401s
+sys	0m0.001s
++ ./copymove-MV -19 4 8 4 11 0
+
+nS = -19	sS = 4	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 128	sS = 16	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.432s
+user	0m0.429s
+sys	0m0.001s
++ ./copymove-CP -19 5 8 4 11 0
+
+nS = -19	sS = 5	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 64	sS = 32	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.417s
+user	0m0.414s
+sys	0m0.001s
++ ./copymove-MV -19 5 8 4 11 0
+
+nS = -19	sS = 5	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 64	sS = 32	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.436s
+user	0m0.433s
+sys	0m0.002s
++ ./copymove-CP -19 6 8 4 11 0
+
+nS = -19	sS = 6	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 32	sS = 64	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.406s
+user	0m0.403s
+sys	0m0.001s
++ ./copymove-MV -19 6 8 4 11 0
+
+nS = -19	sS = 6	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 32	sS = 64	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.456s
+user	0m0.452s
+sys	0m0.001s
++ ./copymove-CP -19 7 8 4 11 0
+
+nS = -19	sS = 7	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 16	sS = 128	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.505s
+user	0m0.501s
+sys	0m0.001s
++ ./copymove-MV -19 7 8 4 11 0
+
+nS = -19	sS = 7	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 16	sS = 128	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.544s
+user	0m0.541s
+sys	0m0.001s
++ ./copymove-CP -19 8 8 4 11 0
+
+nS = -19	sS = 8	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 8	sS = 256	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.492s
+user	0m0.489s
+sys	0m0.002s
++ ./copymove-MV -19 8 8 4 11 0
+
+nS = -19	sS = 8	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 8	sS = 256	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.576s
+user	0m0.573s
+sys	0m0.001s
++ ./copymove-CP -19 9 8 4 11 0
+
+nS = -19	sS = 9	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 4	sS = 512	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.477s
+user	0m0.474s
+sys	0m0.001s
++ ./copymove-MV -19 9 8 4 11 0
+
+nS = -19	sS = 9	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 4	sS = 512	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.637s
+user	0m0.634s
+sys	0m0.001s
++ ./copymove-CP -19 10 8 4 11 0
+
+nS = -19	sS = 10	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 2	sS = 1024	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.498s
+user	0m0.494s
+sys	0m0.001s
++ ./copymove-MV -19 10 8 4 11 0
+
+nS = -19	sS = 10	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 2	sS = 1024	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.530s
+user	0m0.527s
+sys	0m0.002s
++ ./copymove-CP -19 11 8 4 11 0
+
+nS = -19	sS = 11	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 1	sS = 2048	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.560s
+user	0m0.557s
+sys	0m0.001s
++ ./copymove-MV -19 11 8 4 11 0
+
+nS = -19	sS = 11	eS = 8	iC = 4	rC = 11	cC = 0
+nS = 1	sS = 2048	eS = 256	aC = 16	rC = 2048	cC = 1
+
+real	0m0.544s
+user	0m0.541s
+sys	0m0.001s
++ ./copymove-CP -20 0 8 4 10 0
+
+nS = -20	sS = 0	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 4096	sS = 1	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.645s
+user	0m0.641s
+sys	0m0.002s
++ ./copymove-MV -20 0 8 4 10 0
+
+nS = -20	sS = 0	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 4096	sS = 1	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.708s
+user	0m0.704s
+sys	0m0.002s
++ ./copymove-CP -20 1 8 4 10 0
+
+nS = -20	sS = 1	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 2048	sS = 2	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.431s
+user	0m0.427s
+sys	0m0.001s
++ ./copymove-MV -20 1 8 4 10 0
+
+nS = -20	sS = 1	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 2048	sS = 2	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.481s
+user	0m0.477s
+sys	0m0.002s
++ ./copymove-CP -20 2 8 4 10 0
+
+nS = -20	sS = 2	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 1024	sS = 4	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.422s
+user	0m0.419s
+sys	0m0.002s
++ ./copymove-MV -20 2 8 4 10 0
+
+nS = -20	sS = 2	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 1024	sS = 4	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.460s
+user	0m0.457s
+sys	0m0.001s
++ ./copymove-CP -20 3 8 4 10 0
+
+nS = -20	sS = 3	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 512	sS = 8	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.409s
+user	0m0.406s
+sys	0m0.002s
++ ./copymove-MV -20 3 8 4 10 0
+
+nS = -20	sS = 3	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 512	sS = 8	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.446s
+user	0m0.442s
+sys	0m0.002s
++ ./copymove-CP -20 4 8 4 10 0
+
+nS = -20	sS = 4	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 256	sS = 16	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.409s
+user	0m0.406s
+sys	0m0.002s
++ ./copymove-MV -20 4 8 4 10 0
+
+nS = -20	sS = 4	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 256	sS = 16	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.439s
+user	0m0.435s
+sys	0m0.002s
++ ./copymove-CP -20 5 8 4 10 0
+
+nS = -20	sS = 5	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 128	sS = 32	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.423s
+user	0m0.419s
+sys	0m0.002s
++ ./copymove-MV -20 5 8 4 10 0
+
+nS = -20	sS = 5	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 128	sS = 32	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.450s
+user	0m0.446s
+sys	0m0.002s
++ ./copymove-CP -20 6 8 4 10 0
+
+nS = -20	sS = 6	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 64	sS = 64	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.407s
+user	0m0.404s
+sys	0m0.002s
++ ./copymove-MV -20 6 8 4 10 0
+
+nS = -20	sS = 6	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 64	sS = 64	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.473s
+user	0m0.470s
+sys	0m0.002s
++ ./copymove-CP -20 7 8 4 10 0
+
+nS = -20	sS = 7	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 32	sS = 128	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.494s
+user	0m0.490s
+sys	0m0.002s
++ ./copymove-MV -20 7 8 4 10 0
+
+nS = -20	sS = 7	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 32	sS = 128	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.561s
+user	0m0.558s
+sys	0m0.002s
++ ./copymove-CP -20 8 8 4 10 0
+
+nS = -20	sS = 8	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 16	sS = 256	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.540s
+user	0m0.536s
+sys	0m0.002s
++ ./copymove-MV -20 8 8 4 10 0
+
+nS = -20	sS = 8	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 16	sS = 256	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.597s
+user	0m0.594s
+sys	0m0.002s
++ ./copymove-CP -20 9 8 4 10 0
+
+nS = -20	sS = 9	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 8	sS = 512	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.475s
+user	0m0.471s
+sys	0m0.002s
++ ./copymove-MV -20 9 8 4 10 0
+
+nS = -20	sS = 9	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 8	sS = 512	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.730s
+user	0m0.727s
+sys	0m0.002s
++ ./copymove-CP -20 10 8 4 10 0
+
+nS = -20	sS = 10	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 4	sS = 1024	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.496s
+user	0m0.493s
+sys	0m0.002s
++ ./copymove-MV -20 10 8 4 10 0
+
+nS = -20	sS = 10	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 4	sS = 1024	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.784s
+user	0m0.781s
+sys	0m0.002s
++ ./copymove-CP -20 11 8 4 10 0
+
+nS = -20	sS = 11	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 2	sS = 2048	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.520s
+user	0m0.517s
+sys	0m0.002s
++ ./copymove-MV -20 11 8 4 10 0
+
+nS = -20	sS = 11	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 2	sS = 2048	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.593s
+user	0m0.590s
+sys	0m0.001s
++ ./copymove-CP -20 12 8 4 10 0
+
+nS = -20	sS = 12	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 1	sS = 4096	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.508s
+user	0m0.504s
+sys	0m0.002s
++ ./copymove-MV -20 12 8 4 10 0
+
+nS = -20	sS = 12	eS = 8	iC = 4	rC = 10	cC = 0
+nS = 1	sS = 4096	eS = 256	aC = 16	rC = 1024	cC = 1
+
+real	0m0.602s
+user	0m0.598s
+sys	0m0.002s
++ ./copymove-CP -21 0 8 4 9 0
+
+nS = -21	sS = 0	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 8192	sS = 1	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.649s
+user	0m0.645s
+sys	0m0.002s
++ ./copymove-MV -21 0 8 4 9 0
+
+nS = -21	sS = 0	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 8192	sS = 1	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.737s
+user	0m0.733s
+sys	0m0.002s
++ ./copymove-CP -21 1 8 4 9 0
+
+nS = -21	sS = 1	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 4096	sS = 2	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.446s
+user	0m0.442s
+sys	0m0.002s
++ ./copymove-MV -21 1 8 4 9 0
+
+nS = -21	sS = 1	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 4096	sS = 2	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.495s
+user	0m0.492s
+sys	0m0.002s
++ ./copymove-CP -21 2 8 4 9 0
+
+nS = -21	sS = 2	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 2048	sS = 4	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.429s
+user	0m0.425s
+sys	0m0.002s
++ ./copymove-MV -21 2 8 4 9 0
+
+nS = -21	sS = 2	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 2048	sS = 4	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.464s
+user	0m0.460s
+sys	0m0.002s
++ ./copymove-CP -21 3 8 4 9 0
+
+nS = -21	sS = 3	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 1024	sS = 8	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.418s
+user	0m0.415s
+sys	0m0.002s
++ ./copymove-MV -21 3 8 4 9 0
+
+nS = -21	sS = 3	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 1024	sS = 8	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.452s
+user	0m0.448s
+sys	0m0.002s
++ ./copymove-CP -21 4 8 4 9 0
+
+nS = -21	sS = 4	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 512	sS = 16	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.414s
+user	0m0.410s
+sys	0m0.002s
++ ./copymove-MV -21 4 8 4 9 0
+
+nS = -21	sS = 4	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 512	sS = 16	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.449s
+user	0m0.445s
+sys	0m0.002s
++ ./copymove-CP -21 5 8 4 9 0
+
+nS = -21	sS = 5	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 256	sS = 32	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.431s
+user	0m0.427s
+sys	0m0.002s
++ ./copymove-MV -21 5 8 4 9 0
+
+nS = -21	sS = 5	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 256	sS = 32	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.460s
+user	0m0.456s
+sys	0m0.002s
++ ./copymove-CP -21 6 8 4 9 0
+
+nS = -21	sS = 6	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 128	sS = 64	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.412s
+user	0m0.408s
+sys	0m0.002s
++ ./copymove-MV -21 6 8 4 9 0
+
+nS = -21	sS = 6	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 128	sS = 64	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.487s
+user	0m0.483s
+sys	0m0.002s
++ ./copymove-CP -21 7 8 4 9 0
+
+nS = -21	sS = 7	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 64	sS = 128	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.471s
+user	0m0.467s
+sys	0m0.002s
++ ./copymove-MV -21 7 8 4 9 0
+
+nS = -21	sS = 7	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 64	sS = 128	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.572s
+user	0m0.568s
+sys	0m0.002s
++ ./copymove-CP -21 8 8 4 9 0
+
+nS = -21	sS = 8	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 32	sS = 256	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.468s
+user	0m0.465s
+sys	0m0.002s
++ ./copymove-MV -21 8 8 4 9 0
+
+nS = -21	sS = 8	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 32	sS = 256	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.599s
+user	0m0.595s
+sys	0m0.002s
++ ./copymove-CP -21 9 8 4 9 0
+
+nS = -21	sS = 9	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 16	sS = 512	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.544s
+user	0m0.541s
+sys	0m0.002s
++ ./copymove-MV -21 9 8 4 9 0
+
+nS = -21	sS = 9	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 16	sS = 512	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.649s
+user	0m0.644s
+sys	0m0.002s
++ ./copymove-CP -21 10 8 4 9 0
+
+nS = -21	sS = 10	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 8	sS = 1024	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.508s
+user	0m0.503s
+sys	0m0.002s
++ ./copymove-MV -21 10 8 4 9 0
+
+nS = -21	sS = 10	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 8	sS = 1024	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.810s
+user	0m0.807s
+sys	0m0.002s
++ ./copymove-CP -21 11 8 4 9 0
+
+nS = -21	sS = 11	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 4	sS = 2048	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.578s
+user	0m0.574s
+sys	0m0.002s
++ ./copymove-MV -21 11 8 4 9 0
+
+nS = -21	sS = 11	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 4	sS = 2048	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.790s
+user	0m0.786s
+sys	0m0.002s
++ ./copymove-CP -21 12 8 4 9 0
+
+nS = -21	sS = 12	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 2	sS = 4096	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.601s
+user	0m0.597s
+sys	0m0.002s
++ ./copymove-MV -21 12 8 4 9 0
+
+nS = -21	sS = 12	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 2	sS = 4096	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.603s
+user	0m0.599s
+sys	0m0.002s
++ ./copymove-CP -21 13 8 4 9 0
+
+nS = -21	sS = 13	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 1	sS = 8192	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.607s
+user	0m0.604s
+sys	0m0.002s
++ ./copymove-MV -21 13 8 4 9 0
+
+nS = -21	sS = 13	eS = 8	iC = 4	rC = 9	cC = 0
+nS = 1	sS = 8192	eS = 256	aC = 16	rC = 512	cC = 1
+
+real	0m0.521s
+user	0m0.517s
+sys	0m0.002s
++ ./copymove-CP -22 0 8 4 8 0
+
+nS = -22	sS = 0	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 16384	sS = 1	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.655s
+user	0m0.650s
+sys	0m0.003s
++ ./copymove-MV -22 0 8 4 8 0
+
+nS = -22	sS = 0	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 16384	sS = 1	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.930s
+user	0m0.925s
+sys	0m0.003s
++ ./copymove-CP -22 1 8 4 8 0
+
+nS = -22	sS = 1	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 8192	sS = 2	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.445s
+user	0m0.440s
+sys	0m0.003s
++ ./copymove-MV -22 1 8 4 8 0
+
+nS = -22	sS = 1	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 8192	sS = 2	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.554s
+user	0m0.550s
+sys	0m0.003s
++ ./copymove-CP -22 2 8 4 8 0
+
+nS = -22	sS = 2	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 4096	sS = 4	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.430s
+user	0m0.425s
+sys	0m0.003s
++ ./copymove-MV -22 2 8 4 8 0
+
+nS = -22	sS = 2	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 4096	sS = 4	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.522s
+user	0m0.517s
+sys	0m0.003s
++ ./copymove-CP -22 3 8 4 8 0
+
+nS = -22	sS = 3	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 2048	sS = 8	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.424s
+user	0m0.420s
+sys	0m0.002s
++ ./copymove-MV -22 3 8 4 8 0
+
+nS = -22	sS = 3	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 2048	sS = 8	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.484s
+user	0m0.480s
+sys	0m0.003s
++ ./copymove-CP -22 4 8 4 8 0
+
+nS = -22	sS = 4	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 1024	sS = 16	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.426s
+user	0m0.421s
+sys	0m0.003s
++ ./copymove-MV -22 4 8 4 8 0
+
+nS = -22	sS = 4	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 1024	sS = 16	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.496s
+user	0m0.491s
+sys	0m0.003s
++ ./copymove-CP -22 5 8 4 8 0
+
+nS = -22	sS = 5	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 512	sS = 32	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.433s
+user	0m0.428s
+sys	0m0.002s
++ ./copymove-MV -22 5 8 4 8 0
+
+nS = -22	sS = 5	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 512	sS = 32	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.503s
+user	0m0.498s
+sys	0m0.002s
++ ./copymove-CP -22 6 8 4 8 0
+
+nS = -22	sS = 6	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 256	sS = 64	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.430s
+user	0m0.426s
+sys	0m0.002s
++ ./copymove-MV -22 6 8 4 8 0
+
+nS = -22	sS = 6	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 256	sS = 64	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.529s
+user	0m0.524s
+sys	0m0.002s
++ ./copymove-CP -22 7 8 4 8 0
+
+nS = -22	sS = 7	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 128	sS = 128	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.549s
+user	0m0.544s
+sys	0m0.002s
++ ./copymove-MV -22 7 8 4 8 0
+
+nS = -22	sS = 7	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 128	sS = 128	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.614s
+user	0m0.609s
+sys	0m0.003s
++ ./copymove-CP -22 8 8 4 8 0
+
+nS = -22	sS = 8	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 64	sS = 256	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.481s
+user	0m0.476s
+sys	0m0.003s
++ ./copymove-MV -22 8 8 4 8 0
+
+nS = -22	sS = 8	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 64	sS = 256	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.641s
+user	0m0.637s
+sys	0m0.003s
++ ./copymove-CP -22 9 8 4 8 0
+
+nS = -22	sS = 9	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 32	sS = 512	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.567s
+user	0m0.563s
+sys	0m0.002s
++ ./copymove-MV -22 9 8 4 8 0
+
+nS = -22	sS = 9	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 32	sS = 512	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.742s
+user	0m0.737s
+sys	0m0.003s
++ ./copymove-CP -22 10 8 4 8 0
+
+nS = -22	sS = 10	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 16	sS = 1024	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.541s
+user	0m0.537s
+sys	0m0.002s
++ ./copymove-MV -22 10 8 4 8 0
+
+nS = -22	sS = 10	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 16	sS = 1024	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.837s
+user	0m0.832s
+sys	0m0.003s
++ ./copymove-CP -22 11 8 4 8 0
+
+nS = -22	sS = 11	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 8	sS = 2048	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.595s
+user	0m0.590s
+sys	0m0.003s
++ ./copymove-MV -22 11 8 4 8 0
+
+nS = -22	sS = 11	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 8	sS = 2048	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m1.030s
+user	0m1.025s
+sys	0m0.003s
++ ./copymove-CP -22 12 8 4 8 0
+
+nS = -22	sS = 12	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 4	sS = 4096	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.654s
+user	0m0.649s
+sys	0m0.003s
++ ./copymove-MV -22 12 8 4 8 0
+
+nS = -22	sS = 12	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 4	sS = 4096	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.903s
+user	0m0.899s
+sys	0m0.003s
++ ./copymove-CP -22 13 8 4 8 0
+
+nS = -22	sS = 13	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 2	sS = 8192	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.634s
+user	0m0.630s
+sys	0m0.003s
++ ./copymove-MV -22 13 8 4 8 0
+
+nS = -22	sS = 13	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 2	sS = 8192	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.652s
+user	0m0.647s
+sys	0m0.002s
++ ./copymove-CP -22 14 8 4 8 0
+
+nS = -22	sS = 14	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 1	sS = 16384	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.666s
+user	0m0.661s
+sys	0m0.002s
++ ./copymove-MV -22 14 8 4 8 0
+
+nS = -22	sS = 14	eS = 8	iC = 4	rC = 8	cC = 0
+nS = 1	sS = 16384	eS = 256	aC = 16	rC = 256	cC = 1
+
+real	0m0.657s
+user	0m0.653s
+sys	0m0.002s
++ ./copymove-CP -23 0 8 4 7 0
+
+nS = -23	sS = 0	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 32768	sS = 1	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.686s
+user	0m0.679s
+sys	0m0.004s
++ ./copymove-MV -23 0 8 4 7 0
+
+nS = -23	sS = 0	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 32768	sS = 1	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m1.295s
+user	0m1.287s
+sys	0m0.005s
++ ./copymove-CP -23 1 8 4 7 0
+
+nS = -23	sS = 1	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 16384	sS = 2	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.482s
+user	0m0.476s
+sys	0m0.005s
++ ./copymove-MV -23 1 8 4 7 0
+
+nS = -23	sS = 1	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 16384	sS = 2	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.755s
+user	0m0.749s
+sys	0m0.004s
++ ./copymove-CP -23 2 8 4 7 0
+
+nS = -23	sS = 2	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 8192	sS = 4	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.480s
+user	0m0.475s
+sys	0m0.004s
++ ./copymove-MV -23 2 8 4 7 0
+
+nS = -23	sS = 2	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 8192	sS = 4	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.670s
+user	0m0.664s
+sys	0m0.004s
++ ./copymove-CP -23 3 8 4 7 0
+
+nS = -23	sS = 3	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 4096	sS = 8	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.473s
+user	0m0.467s
+sys	0m0.003s
++ ./copymove-MV -23 3 8 4 7 0
+
+nS = -23	sS = 3	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 4096	sS = 8	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.605s
+user	0m0.599s
+sys	0m0.004s
++ ./copymove-CP -23 4 8 4 7 0
+
+nS = -23	sS = 4	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 2048	sS = 16	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.461s
+user	0m0.455s
+sys	0m0.004s
++ ./copymove-MV -23 4 8 4 7 0
+
+nS = -23	sS = 4	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 2048	sS = 16	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.596s
+user	0m0.590s
+sys	0m0.004s
++ ./copymove-CP -23 5 8 4 7 0
+
+nS = -23	sS = 5	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 1024	sS = 32	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.466s
+user	0m0.461s
+sys	0m0.003s
++ ./copymove-MV -23 5 8 4 7 0
+
+nS = -23	sS = 5	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 1024	sS = 32	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.592s
+user	0m0.585s
+sys	0m0.004s
++ ./copymove-CP -23 6 8 4 7 0
+
+nS = -23	sS = 6	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 512	sS = 64	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.461s
+user	0m0.455s
+sys	0m0.004s
++ ./copymove-MV -23 6 8 4 7 0
+
+nS = -23	sS = 6	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 512	sS = 64	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.655s
+user	0m0.649s
+sys	0m0.004s
++ ./copymove-CP -23 7 8 4 7 0
+
+nS = -23	sS = 7	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 256	sS = 128	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.512s
+user	0m0.506s
+sys	0m0.004s
++ ./copymove-MV -23 7 8 4 7 0
+
+nS = -23	sS = 7	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 256	sS = 128	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.735s
+user	0m0.729s
+sys	0m0.004s
++ ./copymove-CP -23 8 8 4 7 0
+
+nS = -23	sS = 8	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 128	sS = 256	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.556s
+user	0m0.550s
+sys	0m0.004s
++ ./copymove-MV -23 8 8 4 7 0
+
+nS = -23	sS = 8	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 128	sS = 256	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.816s
+user	0m0.810s
+sys	0m0.004s
++ ./copymove-CP -23 9 8 4 7 0
+
+nS = -23	sS = 9	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 64	sS = 512	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.538s
+user	0m0.533s
+sys	0m0.003s
++ ./copymove-MV -23 9 8 4 7 0
+
+nS = -23	sS = 9	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 64	sS = 512	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.867s
+user	0m0.861s
+sys	0m0.004s
++ ./copymove-CP -23 10 8 4 7 0
+
+nS = -23	sS = 10	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 32	sS = 1024	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.552s
+user	0m0.547s
+sys	0m0.004s
++ ./copymove-MV -23 10 8 4 7 0
+
+nS = -23	sS = 10	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 32	sS = 1024	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m1.051s
+user	0m1.045s
+sys	0m0.004s
++ ./copymove-CP -23 11 8 4 7 0
+
+nS = -23	sS = 11	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 16	sS = 2048	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.588s
+user	0m0.583s
+sys	0m0.003s
++ ./copymove-MV -23 11 8 4 7 0
+
+nS = -23	sS = 11	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 16	sS = 2048	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m1.103s
+user	0m1.097s
+sys	0m0.005s
++ ./copymove-CP -23 12 8 4 7 0
+
+nS = -23	sS = 12	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 8	sS = 4096	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.639s
+user	0m0.633s
+sys	0m0.004s
++ ./copymove-MV -23 12 8 4 7 0
+
+nS = -23	sS = 12	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 8	sS = 4096	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.983s
+user	0m0.977s
+sys	0m0.004s
++ ./copymove-CP -23 13 8 4 7 0
+
+nS = -23	sS = 13	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 4	sS = 8192	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.608s
+user	0m0.603s
+sys	0m0.004s
++ ./copymove-MV -23 13 8 4 7 0
+
+nS = -23	sS = 13	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 4	sS = 8192	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.960s
+user	0m0.954s
+sys	0m0.004s
++ ./copymove-CP -23 14 8 4 7 0
+
+nS = -23	sS = 14	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 2	sS = 16384	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.714s
+user	0m0.709s
+sys	0m0.003s
++ ./copymove-MV -23 14 8 4 7 0
+
+nS = -23	sS = 14	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 2	sS = 16384	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.712s
+user	0m0.707s
+sys	0m0.003s
++ ./copymove-CP -23 15 8 4 7 0
+
+nS = -23	sS = 15	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 1	sS = 32768	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.797s
+user	0m0.791s
+sys	0m0.003s
++ ./copymove-MV -23 15 8 4 7 0
+
+nS = -23	sS = 15	eS = 8	iC = 4	rC = 7	cC = 0
+nS = 1	sS = 32768	eS = 256	aC = 16	rC = 128	cC = 1
+
+real	0m0.792s
+user	0m0.787s
+sys	0m0.003s
++ ./copymove-CP -24 0 8 4 6 0
+
+nS = -24	sS = 0	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 65536	sS = 1	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.717s
+user	0m0.707s
+sys	0m0.007s
++ ./copymove-MV -24 0 8 4 6 0
+
+nS = -24	sS = 0	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 65536	sS = 1	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m1.456s
+user	0m1.445s
+sys	0m0.008s
++ ./copymove-CP -24 1 8 4 6 0
+
+nS = -24	sS = 1	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 32768	sS = 2	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.497s
+user	0m0.487s
+sys	0m0.007s
++ ./copymove-MV -24 1 8 4 6 0
+
+nS = -24	sS = 1	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 32768	sS = 2	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.809s
+user	0m0.799s
+sys	0m0.007s
++ ./copymove-CP -24 2 8 4 6 0
+
+nS = -24	sS = 2	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 16384	sS = 4	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.480s
+user	0m0.471s
+sys	0m0.006s
++ ./copymove-MV -24 2 8 4 6 0
+
+nS = -24	sS = 2	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 16384	sS = 4	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.691s
+user	0m0.682s
+sys	0m0.007s
++ ./copymove-CP -24 3 8 4 6 0
+
+nS = -24	sS = 3	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 8192	sS = 8	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.483s
+user	0m0.473s
+sys	0m0.007s
++ ./copymove-MV -24 3 8 4 6 0
+
+nS = -24	sS = 3	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 8192	sS = 8	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.578s
+user	0m0.569s
+sys	0m0.006s
++ ./copymove-CP -24 4 8 4 6 0
+
+nS = -24	sS = 4	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 4096	sS = 16	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.479s
+user	0m0.470s
+sys	0m0.006s
++ ./copymove-MV -24 4 8 4 6 0
+
+nS = -24	sS = 4	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 4096	sS = 16	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.702s
+user	0m0.693s
+sys	0m0.006s
++ ./copymove-CP -24 5 8 4 6 0
+
+nS = -24	sS = 5	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 2048	sS = 32	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.486s
+user	0m0.477s
+sys	0m0.006s
++ ./copymove-MV -24 5 8 4 6 0
+
+nS = -24	sS = 5	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 2048	sS = 32	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.577s
+user	0m0.568s
+sys	0m0.006s
++ ./copymove-CP -24 6 8 4 6 0
+
+nS = -24	sS = 6	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 1024	sS = 64	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.484s
+user	0m0.474s
+sys	0m0.007s
++ ./copymove-MV -24 6 8 4 6 0
+
+nS = -24	sS = 6	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 1024	sS = 64	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.713s
+user	0m0.703s
+sys	0m0.006s
++ ./copymove-CP -24 7 8 4 6 0
+
+nS = -24	sS = 7	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 512	sS = 128	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.614s
+user	0m0.606s
+sys	0m0.006s
++ ./copymove-MV -24 7 8 4 6 0
+
+nS = -24	sS = 7	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 512	sS = 128	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.702s
+user	0m0.693s
+sys	0m0.006s
++ ./copymove-CP -24 8 8 4 6 0
+
+nS = -24	sS = 8	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 256	sS = 256	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.535s
+user	0m0.526s
+sys	0m0.006s
++ ./copymove-MV -24 8 8 4 6 0
+
+nS = -24	sS = 8	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 256	sS = 256	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.800s
+user	0m0.791s
+sys	0m0.006s
++ ./copymove-CP -24 9 8 4 6 0
+
+nS = -24	sS = 9	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 128	sS = 512	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.534s
+user	0m0.526s
+sys	0m0.006s
++ ./copymove-MV -24 9 8 4 6 0
+
+nS = -24	sS = 9	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 128	sS = 512	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.934s
+user	0m0.926s
+sys	0m0.007s
++ ./copymove-CP -24 10 8 4 6 0
+
+nS = -24	sS = 10	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 64	sS = 1024	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.620s
+user	0m0.612s
+sys	0m0.006s
++ ./copymove-MV -24 10 8 4 6 0
+
+nS = -24	sS = 10	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 64	sS = 1024	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m1.188s
+user	0m1.180s
+sys	0m0.006s
++ ./copymove-CP -24 11 8 4 6 0
+
+nS = -24	sS = 11	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 32	sS = 2048	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.667s
+user	0m0.658s
+sys	0m0.006s
++ ./copymove-MV -24 11 8 4 6 0
+
+nS = -24	sS = 11	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 32	sS = 2048	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m1.241s
+user	0m1.232s
+sys	0m0.007s
++ ./copymove-CP -24 12 8 4 6 0
+
+nS = -24	sS = 12	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 16	sS = 4096	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.670s
+user	0m0.660s
+sys	0m0.007s
++ ./copymove-MV -24 12 8 4 6 0
+
+nS = -24	sS = 12	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 16	sS = 4096	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m1.203s
+user	0m1.194s
+sys	0m0.007s
++ ./copymove-CP -24 13 8 4 6 0
+
+nS = -24	sS = 13	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 8	sS = 8192	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.626s
+user	0m0.617s
+sys	0m0.007s
++ ./copymove-MV -24 13 8 4 6 0
+
+nS = -24	sS = 13	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 8	sS = 8192	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m1.197s
+user	0m1.188s
+sys	0m0.007s
++ ./copymove-CP -24 14 8 4 6 0
+
+nS = -24	sS = 14	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 4	sS = 16384	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.723s
+user	0m0.714s
+sys	0m0.006s
++ ./copymove-MV -24 14 8 4 6 0
+
+nS = -24	sS = 14	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 4	sS = 16384	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m1.381s
+user	0m1.372s
+sys	0m0.006s
++ ./copymove-CP -24 15 8 4 6 0
+
+nS = -24	sS = 15	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 2	sS = 32768	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.779s
+user	0m0.771s
+sys	0m0.006s
++ ./copymove-MV -24 15 8 4 6 0
+
+nS = -24	sS = 15	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 2	sS = 32768	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.857s
+user	0m0.849s
+sys	0m0.006s
++ ./copymove-CP -24 16 8 4 6 0
+
+nS = -24	sS = 16	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 1	sS = 65536	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.960s
+user	0m0.952s
+sys	0m0.006s
++ ./copymove-MV -24 16 8 4 6 0
+
+nS = -24	sS = 16	eS = 8	iC = 4	rC = 6	cC = 0
+nS = 1	sS = 65536	eS = 256	aC = 16	rC = 64	cC = 1
+
+real	0m0.929s
+user	0m0.920s
+sys	0m0.006s
++ ./copymove-CP -25 0 8 4 5 0
+
+nS = -25	sS = 0	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 131072	sS = 1	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.791s
+user	0m0.774s
+sys	0m0.014s
++ ./copymove-MV -25 0 8 4 5 0
+
+nS = -25	sS = 0	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 131072	sS = 1	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m1.536s
+user	0m1.518s
+sys	0m0.016s
++ ./copymove-CP -25 1 8 4 5 0
+
+nS = -25	sS = 1	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 65536	sS = 2	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.591s
+user	0m0.575s
+sys	0m0.014s
++ ./copymove-MV -25 1 8 4 5 0
+
+nS = -25	sS = 1	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 65536	sS = 2	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m1.044s
+user	0m1.027s
+sys	0m0.013s
++ ./copymove-CP -25 2 8 4 5 0
+
+nS = -25	sS = 2	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 32768	sS = 4	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.528s
+user	0m0.513s
+sys	0m0.012s
++ ./copymove-MV -25 2 8 4 5 0
+
+nS = -25	sS = 2	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 32768	sS = 4	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.920s
+user	0m0.903s
+sys	0m0.013s
++ ./copymove-CP -25 3 8 4 5 0
+
+nS = -25	sS = 3	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 16384	sS = 8	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.571s
+user	0m0.555s
+sys	0m0.013s
++ ./copymove-MV -25 3 8 4 5 0
+
+nS = -25	sS = 3	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 16384	sS = 8	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.750s
+user	0m0.734s
+sys	0m0.013s
++ ./copymove-CP -25 4 8 4 5 0
+
+nS = -25	sS = 4	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 8192	sS = 16	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.555s
+user	0m0.539s
+sys	0m0.013s
++ ./copymove-MV -25 4 8 4 5 0
+
+nS = -25	sS = 4	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 8192	sS = 16	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.617s
+user	0m0.602s
+sys	0m0.012s
++ ./copymove-CP -25 5 8 4 5 0
+
+nS = -25	sS = 5	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 4096	sS = 32	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.546s
+user	0m0.530s
+sys	0m0.012s
++ ./copymove-MV -25 5 8 4 5 0
+
+nS = -25	sS = 5	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 4096	sS = 32	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.620s
+user	0m0.605s
+sys	0m0.012s
++ ./copymove-CP -25 6 8 4 5 0
+
+nS = -25	sS = 6	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 2048	sS = 64	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.541s
+user	0m0.525s
+sys	0m0.012s
++ ./copymove-MV -25 6 8 4 5 0
+
+nS = -25	sS = 6	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 2048	sS = 64	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.789s
+user	0m0.774s
+sys	0m0.012s
++ ./copymove-CP -25 7 8 4 5 0
+
+nS = -25	sS = 7	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 1024	sS = 128	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.628s
+user	0m0.612s
+sys	0m0.014s
++ ./copymove-MV -25 7 8 4 5 0
+
+nS = -25	sS = 7	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 1024	sS = 128	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.761s
+user	0m0.746s
+sys	0m0.012s
++ ./copymove-CP -25 8 8 4 5 0
+
+nS = -25	sS = 8	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 512	sS = 256	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.641s
+user	0m0.626s
+sys	0m0.012s
++ ./copymove-MV -25 8 8 4 5 0
+
+nS = -25	sS = 8	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 512	sS = 256	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.863s
+user	0m0.849s
+sys	0m0.011s
++ ./copymove-CP -25 9 8 4 5 0
+
+nS = -25	sS = 9	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 256	sS = 512	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.621s
+user	0m0.605s
+sys	0m0.012s
++ ./copymove-MV -25 9 8 4 5 0
+
+nS = -25	sS = 9	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 256	sS = 512	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.970s
+user	0m0.955s
+sys	0m0.012s
++ ./copymove-CP -25 10 8 4 5 0
+
+nS = -25	sS = 10	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 128	sS = 1024	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.666s
+user	0m0.650s
+sys	0m0.012s
++ ./copymove-MV -25 10 8 4 5 0
+
+nS = -25	sS = 10	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 128	sS = 1024	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m1.370s
+user	0m1.353s
+sys	0m0.013s
++ ./copymove-CP -25 11 8 4 5 0
+
+nS = -25	sS = 11	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 64	sS = 2048	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.625s
+user	0m0.611s
+sys	0m0.011s
++ ./copymove-MV -25 11 8 4 5 0
+
+nS = -25	sS = 11	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 64	sS = 2048	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m1.507s
+user	0m1.491s
+sys	0m0.012s
++ ./copymove-CP -25 12 8 4 5 0
+
+nS = -25	sS = 12	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 32	sS = 4096	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.630s
+user	0m0.615s
+sys	0m0.011s
++ ./copymove-MV -25 12 8 4 5 0
+
+nS = -25	sS = 12	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 32	sS = 4096	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m1.376s
+user	0m1.361s
+sys	0m0.012s
++ ./copymove-CP -25 13 8 4 5 0
+
+nS = -25	sS = 13	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 16	sS = 8192	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.704s
+user	0m0.689s
+sys	0m0.012s
++ ./copymove-MV -25 13 8 4 5 0
+
+nS = -25	sS = 13	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 16	sS = 8192	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m1.263s
+user	0m1.248s
+sys	0m0.012s
++ ./copymove-CP -25 14 8 4 5 0
+
+nS = -25	sS = 14	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 8	sS = 16384	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.748s
+user	0m0.733s
+sys	0m0.012s
++ ./copymove-MV -25 14 8 4 5 0
+
+nS = -25	sS = 14	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 8	sS = 16384	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m1.481s
+user	0m1.466s
+sys	0m0.012s
++ ./copymove-CP -25 15 8 4 5 0
+
+nS = -25	sS = 15	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 4	sS = 32768	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.917s
+user	0m0.902s
+sys	0m0.012s
++ ./copymove-MV -25 15 8 4 5 0
+
+nS = -25	sS = 15	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 4	sS = 32768	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m1.620s
+user	0m1.605s
+sys	0m0.012s
++ ./copymove-CP -25 16 8 4 5 0
+
+nS = -25	sS = 16	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 2	sS = 65536	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m1.008s
+user	0m0.993s
+sys	0m0.013s
++ ./copymove-MV -25 16 8 4 5 0
+
+nS = -25	sS = 16	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 2	sS = 65536	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m0.980s
+user	0m0.964s
+sys	0m0.012s
++ ./copymove-CP -25 17 8 4 5 0
+
+nS = -25	sS = 17	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 1	sS = 131072	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m1.010s
+user	0m0.995s
+sys	0m0.012s
++ ./copymove-MV -25 17 8 4 5 0
+
+nS = -25	sS = 17	eS = 8	iC = 4	rC = 5	cC = 0
+nS = 1	sS = 131072	eS = 256	aC = 16	rC = 32	cC = 1
+
+real	0m1.006s
+user	0m0.991s
+sys	0m0.012s
